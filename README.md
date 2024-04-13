@@ -22,5 +22,3 @@ Info ❌ - 20%
 Watch ❌ - 0%
 - add watch page to watch the anime
 - add option to store data in localstorage to make continue watching feature
-
-Watch ❌ - 0%
