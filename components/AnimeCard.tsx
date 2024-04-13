@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardFooter, CardBody, Image } from "@nextui-org/react";
 import Link from "next/link";
 
-export default function App({ anime }:any) {
+export default function App({ anime }: any) {
   return (
     <Link href={`info/${anime.id}`}>
       <Card isPressable isFooterBlurred className="border-none">

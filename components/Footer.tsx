@@ -1,5 +1,5 @@
 import React from "react";
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function App() {
   return (
@@ -19,13 +19,13 @@ export default function App() {
             <div>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <Link href="#" className="hover:underline">
+                  <Link href="/policy" className="hover:underline">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
-                    Terms &amp; Conditions
+                  <Link href="/tos" className="hover:underline">
+                    Terms Of Service
                   </Link>
                 </li>
               </ul>

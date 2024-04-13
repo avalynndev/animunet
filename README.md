@@ -1,5 +1,8 @@
 Checklist: ✅
 
+Terms & Services ✅
+Privacy Policy ✅
+
 Navbar ❌ - 50% 
 - make a better navbar and remove nextui in it..
 - add function to search bar

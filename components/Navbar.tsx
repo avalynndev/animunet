@@ -8,7 +8,7 @@ import {
   Button,
   Input,
 } from "@nextui-org/react";
-import SearchIcon from '@/components/Icons/SearchIcon'
+import SearchIcon from "@/components/Icons/SearchIcon";
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
             <p className="font-bold text-inherit">ANIMUNET</p>
           </Link>
         </NavbarBrand>
-        
+
         <NavbarContent as="div" className="items-center" justify="end">
           <Input
             classNames={{

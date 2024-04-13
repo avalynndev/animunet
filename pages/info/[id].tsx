@@ -1,7 +1,8 @@
 import axios from "axios";
-import DetailsContainer from "../../components/DetailsContainer";
+import { url } from "@/config/url";
+import DetailsContainer from "@/components/DetailsContainer";
 
-const Details = ({ data }:any) => {
+const Info = ({ data }: any) => {
   return (
     <>
       <DetailsContainer data={data} />
@@ -15,9 +16,7 @@ export async function getServerSideProps(context: any) {
   } = context;
 
   try {
-    const details_res = await axios.get(
-      "https://animetize-api.vercel.app/anime/gogoanime/info/" + id
-    )
+    const details_res = await axios.get(url.info + id);
 
     const data = details_res.data;
 
@@ -36,4 +35,4 @@ export async function getServerSideProps(context: any) {
   }
 }
 
-export default Details;
+export default Info;
