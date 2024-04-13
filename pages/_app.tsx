@@ -29,8 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
           : "light text-foreground bg-background"
       }
     >
-      <button onClick={toggleTheme}>Toggle Theme</button>
-      <Navbar />
+      <Navbar toggleTheme={toggleTheme} theme={theme} />
       <NextUIProvider>
         <Component {...pageProps} />
       </NextUIProvider>

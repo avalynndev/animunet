@@ -8,9 +8,10 @@ import {
   Button,
   Input,
 } from "@nextui-org/react";
+import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import SearchIcon from "@/components/Icons/SearchIcon";
 
-export default function App() {
+export default function App({ toggleTheme, theme }:any) {
   return (
     <>
       <Navbar>
@@ -20,20 +21,32 @@ export default function App() {
           </Link>
         </NavbarBrand>
 
-        <NavbarContent as="div" className="items-center" justify="end">
+        <NavbarContent>
           <Input
             classNames={{
-              base: "w-full sm:max-w-[10rem] h-10",
+              base: "w-96 h-10",
               mainWrapper: "h-full",
               input: "text-small",
               inputWrapper:
                 "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
             }}
             placeholder="Type to search..."
-            size="sm"
+            size="lg"
             startContent={<SearchIcon size={18} />}
             type="search"
           />
+        </NavbarContent>
+
+        <NavbarContent justify="end">
+          <Button
+            isIconOnly
+            color={theme === "light" ? "secondary" : "primary"}
+            variant="shadow"
+            onClick={toggleTheme}
+            className={theme === "light" ? "light-button" : "dark-button"}
+          >
+            {theme === "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
+          </Button>
         </NavbarContent>
       </Navbar>
     </>

@@ -6,8 +6,7 @@ Privacy Policy ✅
 
 Footer ✅ 
 
-Navbar ❌ - 50% 
-- make a better navbar and remove nextui in it..
+Navbar ❌ - 70% 
 - add function to search bar
 
 Main ❌ - 20% 
