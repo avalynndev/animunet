@@ -4,15 +4,15 @@ import { url } from "@/config/url";
 
 const Main = ({ top_airing, popular }: any) => {
   return (
-    <div>
-      <h1>Top-Airing</h1>
-      <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-7">
+    <div className="max-w mx-auto px-6">
+      <h1 className="text-4xl font-bold mb-4 py-4">Top Airing</h1>
+      <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
         {top_airing.map((anime: any) => (
           <AnimeCard key={anime.id} anime={anime} />
         ))}
       </div>
-      <h1>Popular</h1>
-      <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-7">
+      <h1 className="text-4xl font-bold mb-4 py-4">Popular</h1>
+      <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
         {popular.map((anime: any) => (
           <AnimeCard key={anime.id} anime={anime} />
         ))}
@@ -23,9 +23,7 @@ const Main = ({ top_airing, popular }: any) => {
 
 export async function getServerSideProps() {
   const top_airing_res = await axios.get(url.top_airing);
-
   const popular_res = await axios.get(url.popular);
-
   const top_airing = top_airing_res.data.results;
   const popular = popular_res.data.results;
 

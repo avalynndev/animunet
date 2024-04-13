@@ -3,9 +3,11 @@ import { Card, CardFooter, CardBody, Image } from "@nextui-org/react";
 import Link from "next/link";
 
 export default function App({ anime }: any) {
+  const truncatedTitle =
+    anime.title.length > 25 ? anime.title.slice(0, 20) + "..." : anime.title;
   return (
     <Link href={`info/${anime.id}`}>
-      <Card isPressable isFooterBlurred className="border-none">
+      <Card isPressable className="border-none bg-none">
         <CardBody className="overflow-visible py-2">
           <Image
             alt="Card background"
@@ -14,8 +16,8 @@ export default function App({ anime }: any) {
             width={270}
           />
         </CardBody>
-        <CardFooter className="overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-          <p className="text-tiny text-center">{anime.title}</p>
+        <CardFooter className="pt-0">
+          <p className="text-tiny text-center">{truncatedTitle}</p>
         </CardFooter>
       </Card>
     </Link>

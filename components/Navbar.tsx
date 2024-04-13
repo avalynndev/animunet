@@ -20,7 +20,7 @@ export default function App({ toggleTheme, theme }:any) {
             <p className="font-bold text-inherit">ANIMUNET</p>
           </Link>
         </NavbarBrand>
-
+        {/** 
         <NavbarContent>
           <Input
             classNames={{
@@ -36,7 +36,7 @@ export default function App({ toggleTheme, theme }:any) {
             type="search"
           />
         </NavbarContent>
-
+        */}
         <NavbarContent justify="end">
           <Button
             isIconOnly
