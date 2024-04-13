@@ -1,16 +1,15 @@
-# Checklist: ✅❌
+# ✅ Checklist:
 
 Terms & Services ✅
 
 Privacy Policy ✅
 
+Footer ✅ 
+
 Navbar ❌ - 50% 
 - make a better navbar and remove nextui in it..
 - add function to search bar
 - add random anime page..
-
-Footer ❌ - 90% 
-- update values
 
 Main ❌ - 20% 
 - need to fix card ui, add banner and continue watching..
