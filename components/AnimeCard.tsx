@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, CardFooter, CardBody, Image } from "@nextui-org/react";
+import { Card, CardFooter, CardBody,  } from "@nextui-org/react";
 import Link from "next/link";
+import Image from 'next/image'
 
 export default function App({ anime }: any) {
   const truncatedTitle =
@@ -13,6 +14,7 @@ export default function App({ anime }: any) {
             alt="Card background"
             className="object-cover rounded-xl h-[250px]"
             src={anime.image}
+            height={250}
             width={270}
           />
         </CardBody>

@@ -10,7 +10,8 @@ export default function App() {
             <Link href="/" className="flex items-center">
               <img
                 src="https://1000logos.net/wp-content/uploads/2022/08/One-Piece-Logo.png"
-                className="h-16"
+                height={16}
+                width={100}
                 alt="Logo"
               />
             </Link>

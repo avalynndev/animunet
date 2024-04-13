@@ -4,9 +4,11 @@ import DetailsContainer from "@/components/DetailsContainer";
 
 const Info = ({ data }: any) => {
   return (
-    <>
+    // <>
+    <div className="pb-96">
       <DetailsContainer data={data} />
-    </>
+    </div>
+    // </>
   );
 };
 
