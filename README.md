@@ -1,6 +1,7 @@
-Checklist: ✅
+# Checklist: ✅❌
 
 Terms & Services ✅
+
 Privacy Policy ✅
 
 Navbar ❌ - 50% 
