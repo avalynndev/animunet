@@ -15,8 +15,9 @@ const Terms = () => {
       </p>
       <p className="mb-4">
         <strong className="font-bold">Use of Site:</strong> The service is
-        provided "as is" and is used at the user's own risk. Users must not
-        misuse the service in any way that breaches laws or regulations.
+        provided &quot;as is&quot; and is used at the user&apos;s own risk.
+        Users must not misuse the service in any way that breaches laws or
+        regulations.
       </p>
       <p className="mb-4">
         <strong className="font-bold">User Content:</strong> Users may share
