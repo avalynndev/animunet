@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { NextUIProvider } from "@nextui-org/react";
 import { useState, useEffect } from "react";
@@ -34,6 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <NextUIProvider>
         <Component {...pageProps} />
         <Analytics/>
+        <SpeedInsights/>
       </NextUIProvider>
       <Footer />
     </div>
