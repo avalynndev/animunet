@@ -3,8 +3,6 @@ import { url } from "@/config/url";
 import EpisodeContainer from "@/components/EpisodeContainer";
 
 const Info = ({ data, details }: any) => {
-  console.log(data[1].url);
-
   return (
     // <>
     <div className="pb-96">
@@ -28,14 +26,12 @@ export async function getServerSideProps(context: any) {
   const {
     query: { id, episode },
   } = context;
-  console.log(id + episode);
 
   try {
     const watch_res = await axios.get(url.episode_link + id + "-episode-" + episode);
     const details_res = await axios.get(url.info + id);
     const details = details_res.data;
     const data = watch_res.data;
-    console.log(data)
 
     return {
       props: {
