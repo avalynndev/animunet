@@ -16,7 +16,7 @@ const Info = ({ data, details }: any) => {
         allowFullScreen
         className="max-w-3xl mx-auto px-4 pt-10"
       ></iframe>
-      <EpisodeContainer data={details} />
+      <EpisodeContainer key={data.id} data={details} />
     </div>
     // </>
   );
