@@ -5,12 +5,10 @@ import EpisodeContainer from "@/components/EpisodeContainer";
 
 const Info = ({ data }: any) => {
   return (
-    // <>
     <div className="pb-96">
       <DetailsContainer data={data} />
       <EpisodeContainer data={data} />
     </div>
-    // </>
   );
 };
 
