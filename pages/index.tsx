@@ -2,13 +2,14 @@ import axios from "axios";
 import { Suspense } from "react";
 import AnimeCard from "@/components/AnimeCard";
 import { url } from "@/config/url";
+import Loading from "@/components/Loading";
 
 const Main = ({ top_airing, popular }: any) => {
   return (
     <div className="max-w mx-auto px-6">
       <h1 className="text-4xl font-bold mb-4 py-4">Top Airing</h1>
       <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-        <Suspense fallback={<p>Loading feed...</p>}>
+        <Suspense fallback={<Loading/>}>
           {top_airing.map((anime: any) => (
             <AnimeCard key={anime.id} anime={anime} />
           ))}
@@ -16,7 +17,7 @@ const Main = ({ top_airing, popular }: any) => {
       </div>
       <h1 className="text-4xl font-bold mb-4 py-4">Popular</h1>
       <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-        <Suspense fallback={<p>Loading feed...</p>}>
+        <Suspense fallback={<Loading/>}>
           {popular.map((anime: any) => (
             <AnimeCard key={anime.id} anime={anime} />
           ))}
