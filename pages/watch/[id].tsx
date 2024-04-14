@@ -14,6 +14,7 @@ const Info = ({ data, details }: any) => {
         title="Embedded Video"
         width="100%"
         height="450"
+        scrolling="no"
         allowFullScreen
         className="max-w-3xl mx-auto px-4 pt-10"
       ></iframe>
