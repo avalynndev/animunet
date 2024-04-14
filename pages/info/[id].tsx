@@ -8,7 +8,7 @@ const Info = ({ data }: any) => {
     // <>
     <div className="pb-96">
       <DetailsContainer data={data} />
-      <EpisodeContainer key={data.id} data={data} />
+      <EpisodeContainer data={data} />
     </div>
     // </>
   );

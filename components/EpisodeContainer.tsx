@@ -10,9 +10,8 @@ const DetailsContainer = ({ data }: any) => {
           <div className="flex flex-wrap gap-2 items-center">
             {data.episodes.map((episodes: any) => (
               <Link
-                href={
-                  "/watch/" + data.id + "?episode=" + episodes.number
-                }
+                key={data.id}
+                href={"/watch/" + data.id + "?episode=" + episodes.number}
               >
                 <Button
                   color="primary"
