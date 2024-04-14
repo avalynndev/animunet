@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from 'next/image'
 
 export default function App() {
   return (
@@ -9,10 +8,9 @@ export default function App() {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link href="/" className="flex items-center">
-              <Image
+              <img
                 src="https://1000logos.net/wp-content/uploads/2022/08/One-Piece-Logo.png"
-                height={16}
-                width={100}
+                className="h-16"
                 alt="Logo"
               />
             </Link>
