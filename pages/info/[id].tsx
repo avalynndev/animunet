@@ -1,12 +1,14 @@
 import axios from "axios";
 import { url } from "@/config/url";
 import DetailsContainer from "@/components/DetailsContainer";
+import EpisodeContainer from "@/components/EpisodeContainer";
 
 const Info = ({ data }: any) => {
   return (
     // <>
     <div className="pb-96">
-        <DetailsContainer data={data} />
+      <DetailsContainer data={data} />
+      <EpisodeContainer data={data} />
     </div>
     // </>
   );
@@ -19,7 +21,6 @@ export async function getServerSideProps(context: any) {
 
   try {
     const details_res = await axios.get(url.info + id);
-
     const data = details_res.data;
 
     return {

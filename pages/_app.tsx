@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import { NextUIProvider } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import type { AppProps } from "next/app";
@@ -32,6 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Navbar toggleTheme={toggleTheme} theme={theme} />
       <NextUIProvider>
         <Component {...pageProps} />
+        <Analytics/>
       </NextUIProvider>
       <Footer />
     </div>
