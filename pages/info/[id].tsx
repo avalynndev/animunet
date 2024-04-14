@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Suspense } from "react";
 import { url } from "@/config/url";
 import DetailsContainer from "@/components/DetailsContainer";
 
@@ -6,7 +7,9 @@ const Info = ({ data }: any) => {
   return (
     // <>
     <div className="pb-96">
-      <DetailsContainer data={data} />
+      <Suspense fallback={<p>Loading feed...</p>}>
+        <DetailsContainer data={data} />
+      </Suspense>
     </div>
     // </>
   );
