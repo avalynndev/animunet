@@ -1,4 +1,5 @@
 import React from "react";
+import { Skeleton } from '@nextui-org/react'
 import Image from "next/image";
 
 const DetailsContainer = ({ data }:any) => {
@@ -7,9 +8,9 @@ const DetailsContainer = ({ data }:any) => {
       <div className="max-w-3xl mx-auto flex">
         <div className="w-2/3 pr-4">
           <h1 className="text-3xl font-semibold">{data.title}</h1>
-          <p className="mt-2">
-            <strong>Genres:</strong> {data.genres.join(", ")}
-          </p>
+            <p className="mt-2">
+              <strong>Genres:</strong> {data.genres.join(", ")}
+            </p>
           <p className="mt-2">
             <strong>Total Episodes:</strong> {data.totalEpisodes}
           </p>

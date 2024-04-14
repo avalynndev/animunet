@@ -1,16 +1,12 @@
 import axios from "axios";
-import { Suspense } from "react";
 import { url } from "@/config/url";
 import DetailsContainer from "@/components/DetailsContainer";
-import Loading from "@/components/Loading";
 
 const Info = ({ data }: any) => {
   return (
     // <>
     <div className="pb-96">
-      <Suspense fallback={<Loading/>}>
         <DetailsContainer data={data} />
-      </Suspense>
     </div>
     // </>
   );
