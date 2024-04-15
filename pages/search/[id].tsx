@@ -2,7 +2,7 @@ import axios from "axios";
 import { Suspense } from "react";
 import { Skeleton } from "@nextui-org/react";
 import { url } from "@/config/url";
-import AnimeCard from '@/components/AnimeCard'
+import AnimeCard from "@/components/AnimeCard";
 
 const Info = ({ data }: any) => {
   return (
@@ -14,7 +14,6 @@ const Info = ({ data }: any) => {
   );
 };
 
-
 export async function getServerSideProps(context: any) {
   const {
     query: { id },
@@ -23,7 +22,6 @@ export async function getServerSideProps(context: any) {
   try {
     const search_res = await axios.get(url.search + id);
     const data = search_res.data.results;
-    console.log(data)
 
     return {
       props: {
