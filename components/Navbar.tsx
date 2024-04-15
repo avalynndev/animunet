@@ -1,17 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
-  NavbarItem,
   Link,
   Button,
   Input,
 } from "@nextui-org/react";
+import { useRouter } from "next/navigation";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import SearchIcon from "@/components/Icons/SearchIcon";
 
 export default function App({ toggleTheme, theme }:any) {
+  const [searchValue, setSearchValue] = useState(""); // State to store the input value
+  const router = useRouter();
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value);
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      // Redirect to another page when Enter key is pressed
+      router.push(`/search/${searchValue}`); // Assuming you want to redirect to a search page with the search query
+    }
+  };
   return (
     <>
       <Navbar>
@@ -20,7 +33,6 @@ export default function App({ toggleTheme, theme }:any) {
             <p className="font-bold text-inherit">ANIMUNET</p>
           </Link>
         </NavbarBrand>
-        {/** 
         <NavbarContent>
           <Input
             classNames={{
@@ -34,9 +46,11 @@ export default function App({ toggleTheme, theme }:any) {
             size="lg"
             startContent={<SearchIcon size={18} />}
             type="search"
+            value={searchValue}
+            onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
           />
         </NavbarContent>
-        */}
         <NavbarContent justify="end">
           <Button
             isIconOnly

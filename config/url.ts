@@ -3,4 +3,5 @@ export const url = {
   top_airing: "https://animetize-api.vercel.app/anime/gogoanime/top-airing",
   info: "https://animetize-api.vercel.app/anime/gogoanime/info/",
   episode_link: "https://animetize-api.vercel.app/anime/gogoanime/servers/",
+  search: "https://animetize-api.vercel.app/anime/gogoanime/",
 };

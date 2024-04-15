@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import type { AppProps } from "next/app";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { BrowserRouter } from "react-router-dom";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useState("dark");
@@ -24,20 +25,21 @@ export default function App({ Component, pageProps }: AppProps) {
     localStorage.setItem("theme", newTheme);
   };
   return (
-    <div
-      className={
-        theme === "dark"
-          ? "dark text-foreground bg-background"
-          : "light text-foreground bg-background"
-      }
-    >
-      <Navbar toggleTheme={toggleTheme} theme={theme} />
-      <NextUIProvider>
-        <Component {...pageProps} />
-        <Analytics/>
-        <SpeedInsights/>
-      </NextUIProvider>
-      <Footer />
-    </div>
+      <div
+        className={
+          theme === "dark"
+            ? "dark text-foreground bg-background"
+            : "light text-foreground bg-background"
+        }
+      >
+        <Navbar toggleTheme={toggleTheme} theme={theme} />
+        <NextUIProvider>
+          <Component {...pageProps} />
+
+          <Analytics />
+          <SpeedInsights />
+        </NextUIProvider>
+        <Footer />
+      </div>
   );
 }
