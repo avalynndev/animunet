@@ -19,7 +19,7 @@ const Info = ({ data, details }: any) => {
           }
         >
           <iframe
-            src={data[1].url}
+            src={"https://bharadwajpro.github.io/m3u8-player/player/#" + data.sources[5].url}
             title="Embedded Video"
             width="100%"
             height="450"
