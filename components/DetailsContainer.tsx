@@ -1,9 +1,7 @@
 import React from "react";
-import { Suspense } from "react";
-import { Skeleton } from '@nextui-org/react'
 import Image from "next/image";
 
-const DetailsContainer = ({ data }:any) => {
+const DetailsContainer = ({ data }: any) => {
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto flex">
@@ -21,24 +19,22 @@ const DetailsContainer = ({ data }:any) => {
           <p className="mt-2">
             <strong>Description:</strong> {data.description}
           </p>
-        </div>
-        <Suspense fallback={<Skeleton />}>
-          <div className="w-1/3">
-            <div
-              className="rounded-lg overflow-hidden bg-white shadow-md"
-              style={{ width: "250px" }}
-            >
-              <div className="relative h-96">
-                <Image
-                  src={data.image}
-                  fill
-                  alt="Anime Cover"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
+        </div>{" "}
+        <div className="w-1/3">
+          <div
+            className="rounded-lg overflow-hidden bg-white shadow-md"
+            style={{ width: "250px" }}
+          >
+            <div className="relative h-96">
+              <Image
+                src={data.image}
+                fill
+                alt="Anime Cover"
+                style={{ objectFit: "cover" }}
+              />
             </div>
           </div>
-        </Suspense>
+        </div>
       </div>
     </div>
   );

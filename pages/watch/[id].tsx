@@ -1,23 +1,10 @@
 import axios from "axios";
-import { Suspense } from "react";
-import { Skeleton } from "@nextui-org/react";
 import { url } from "@/config/url";
 import EpisodeContainer from "@/components/EpisodeContainer";
 
 const Info = ({ data, details }: any) => {
   return (
     <div className="pb-96">
-        <Suspense
-          fallback={
-            <Skeleton>
-              <iframe
-                width="100%"
-                height="450"
-                className="max-w-3xl mx-auto px-4 pt-10"
-              ></iframe>
-            </Skeleton>
-          }
-        >
           <iframe
             src={"https://bharadwajpro.github.io/m3u8-player/player/#" + data.sources[5].url}
             title="Embedded Video"
@@ -27,7 +14,6 @@ const Info = ({ data, details }: any) => {
             allowFullScreen
             className="max-w-3xl mx-auto px-4 pt-10"
           ></iframe>
-        </Suspense>
       <EpisodeContainer data={details} />
     </div>
   );

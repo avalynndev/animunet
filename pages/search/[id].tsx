@@ -1,6 +1,4 @@
 import axios from "axios";
-import { Suspense } from "react";
-import { Skeleton } from "@nextui-org/react";
 import { url } from "@/config/url";
 import AnimeCard from "@/components/AnimeCard";
 
