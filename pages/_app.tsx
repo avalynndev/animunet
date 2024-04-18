@@ -25,21 +25,21 @@ export default function App({ Component, pageProps }: AppProps) {
     localStorage.setItem("theme", newTheme);
   };
   return (
-      <div
-        className={
-          theme === "dark"
-            ? "dark text-foreground bg-background"
-            : "light text-foreground bg-background"
-        }
-      >
-        <Navbar toggleTheme={toggleTheme} theme={theme} />
-        <NextUIProvider>
-          <Component {...pageProps} />
+    <div
+      className={
+        theme === "dark"
+          ? "dark text-foreground bg-background"
+          : "light text-foreground bg-background"
+      }
+    >
+      <Navbar toggleTheme={toggleTheme} theme={theme} />
+      <NextUIProvider>
+        <Component {...pageProps} />
 
-          <Analytics />
-          <SpeedInsights />
-        </NextUIProvider>
-        <Footer />
-      </div>
+        <Analytics />
+        {/** <SpeedInsights /> */}
+      </NextUIProvider>
+      <Footer />
+    </div>
   );
 }
