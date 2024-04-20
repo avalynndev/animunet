@@ -53,10 +53,12 @@ const Info = () => {
           ))}
         </div>
       ) : (
-        <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16	sm:grid-cols-5 md:grid-cols-5 pb-16">
-          {search_results.map((anime: any) => (
-            <AnimeCard key={anime.id} anime={anime} />
-          ))}
+        <div className="pb-96">
+          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16	sm:grid-cols-5 md:grid-cols-5 pb-16">
+            {search_results.map((anime: any) => (
+              <AnimeCard key={anime.id} anime={anime} />
+            ))}
+          </div>
         </div>
       )}
     </>
