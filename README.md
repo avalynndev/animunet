@@ -6,20 +6,17 @@ Privacy Policy ✅
 
 Footer ✅ 
 
-Navbar ❌ - 70% 
-- add function to search bar
+Navbar ✅ 
 
-Main ❌ - 20% 
+Main ❌ - 50% 
 - need to fix card ui, add banner and continue watching..
 - add another name option and TV/Mov option 
-- add beautiful animations when accessing a card
-- Toggle option to change theme
 
-Info ❌ - 20% 
-- seriously needs to add ui
-- episodes number, episdoes and more data shown
+Info ❌ - 70% 
 - recommended anime and related anime (sequel and stuf)
 
-Watch ❌ - 0%
-- add watch page to watch the anime
+Watch ❌ - 50%
 - add option to store data in localstorage to make continue watching feature
+
+Additional Features (Very Much Required) ❌ - 0%
+- add good ui for mobile users and fix errors in all pages
