@@ -1,8 +1,11 @@
 import React from "react";
-import Link from 'next/link'
+import Link from "next/link";
 import { Button } from "@nextui-org/react";
 
-const DetailsContainer = ({ data }: any) => {
+const EpisodeContainer = ({ data }: any) => {
+  if (!data) {
+    return <div>Loading</div>;
+  }
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto flex">
@@ -10,8 +13,8 @@ const DetailsContainer = ({ data }: any) => {
           <div className="flex flex-wrap gap-2 items-center">
             {data.episodes.map((episodes: any) => (
               <Link
-                key={data.id}
-                href={"/watch/" + data.id + "?episode=" + episodes.number}
+                key={`episode-${data.id}-${episodes.number}`}
+                href={`/watch/${data.id}?episode=${episodes.number}`}
               >
                 <Button
                   color="primary"
@@ -30,4 +33,4 @@ const DetailsContainer = ({ data }: any) => {
   );
 };
 
-export default DetailsContainer;
+export default EpisodeContainer;

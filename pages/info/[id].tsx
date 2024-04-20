@@ -1,21 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Skeleton } from "@nextui-org/react";
 import { url } from "@/config/url";
 import DetailsContainer from "@/components/DetailsContainer";
 import EpisodeContainer from "@/components/EpisodeContainer";
+import { useRouter } from "next/router";
 
-const Info = ({ data }: any) => {
+const Info = () => {
+  const {
+    query: { id },
+  } = useRouter();
   const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState<any>();
+
+  const fetchDetails = useCallback(async () => {
+    try {
+      const response = await axios.get(url.info + id);
+      setData(response.data);
+    } catch (error) {
+      console.error("Error fetching details:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [id]);
 
   useEffect(() => {
-    // Simulating data fetching delay with setTimeout
-    const timer = setTimeout(() => {
-      setIsLoading(false); // Turn off the loading state
-    }, 3000); // Simulate a 3-second delay (replace this with actual data fetching)
+    if (id) {
+      fetchDetails();
+    }
+  }, [id, fetchDetails]);
 
-    return () => clearTimeout(timer);
-  }, []);
   return (
     <div className="pb-96">
       {isLoading ? (
@@ -24,24 +38,23 @@ const Info = ({ data }: any) => {
             <div className="w-2/3 pr-4">
               <Skeleton>
                 <h1 className="text-3xl font-semibold">x</h1>
-                </Skeleton>
-                <Skeleton>
+              </Skeleton>
+              <Skeleton>
                 <p className="mt-2">
                   <strong>Genres:</strong>xxx
                 </p>
-                </Skeleton>
-                <Skeleton>
-              
+              </Skeleton>
+              <Skeleton>
                 <p className="mt-2">
                   <strong>Total Episodes:</strong>xx
                 </p>
-                </Skeleton>
-                <Skeleton>
+              </Skeleton>
+              <Skeleton>
                 <p className="mt-2">
                   <strong>Release Date:</strong>xxxx
                 </p>
-                </Skeleton>
-                <Skeleton>
+              </Skeleton>
+              <Skeleton>
                 <p className="mt-2">
                   <strong>Description:</strong>
                   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -67,35 +80,13 @@ const Info = ({ data }: any) => {
           </div>
         </div>
       ) : (
-        <DetailsContainer data={data} />
+        <>
+          <DetailsContainer key={`details-${data?.id}`} data={data} />
+          <EpisodeContainer key={`episodes-${data?.id}`} data={data} />
+        </>
       )}
-      <EpisodeContainer data={data} />
     </div>
   );
 };
-
-export async function getServerSideProps(context: any) {
-  const {
-    query: { id },
-  } = context;
-
-  try {
-    const details_res = await axios.get(url.info + id);
-    const data = details_res.data;
-
-    return {
-      props: {
-        data,
-      },
-    };
-  } catch (error) {
-    console.error("Error fetching details:", error);
-    return {
-      props: {
-        data: null, // or handle error as needed
-      },
-    };
-  }
-}
 
 export default Info;

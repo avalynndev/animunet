@@ -7,7 +7,7 @@ export default function App({ anime }: any) {
   const truncatedTitle =
     anime.title.length > 25 ? anime.title.slice(0, 20) + "..." : anime.title;
   return (
-    <Link href={`/info/${anime.id}`}>
+    <Link shallow href={`/info/${anime.id}`}>
       <Card isPressable className="border-none bg-none">
         <CardBody className="overflow-visible py-2">
           <Image

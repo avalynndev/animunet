@@ -2,6 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 const DetailsContainer = ({ data }: any) => {
+  if (!data) {
+    return <div>Loading</div>;
+  }
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto flex">
@@ -29,6 +32,8 @@ const DetailsContainer = ({ data }: any) => {
               <Image
                 src={data.image}
                 fill
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 alt="Anime Cover"
                 style={{ objectFit: "cover" }}
               />
