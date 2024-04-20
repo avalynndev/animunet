@@ -32,7 +32,7 @@ const Main = () => {
       {isLoading ? (
         <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
           {Array.from({ length: 10 }, (_, index) => (
-            <Card isPressable className="border-none bg-none">
+            <Card isPressable className="border-none bg-none" key={index}>
               <CardBody className="overflow-visible py-2">
                 <Skeleton>
                   <Image
@@ -63,7 +63,7 @@ const Main = () => {
       {isLoading ? (
         <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
           {Array.from({ length: 20 }, (_, index) => (
-            <Card isPressable className="border-none bg-none">
+            <Card isPressable className="border-none bg-none" key={index}>
               <CardBody className="overflow-visible py-2">
                 <Skeleton>
                   <Image
