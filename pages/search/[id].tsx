@@ -1,39 +1,42 @@
 import axios from "axios";
+import React, { useState, useEffect, useCallback } from "react";
 import { url } from "@/config/url";
 import AnimeCard from "@/components/AnimeCard";
+import { useRouter } from "next/router";
 
-const Info = ({ data }: any) => {
-  return (
-    <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16	sm:grid-cols-5 md:grid-cols-5 pb-16">
-      {data.map((anime: any) => (
-        <AnimeCard key={anime.id} anime={anime} />
-      ))}
-    </div>
-  );
-};
-
-export async function getServerSideProps(context: any) {
+const Info = () => {
   const {
     query: { id },
-  } = context;
+  } = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
+  const [search_results, setSearchResults] = useState<any[]>([]);
 
-  try {
-    const search_res = await axios.get(url.search + id);
-    const data = search_res.data.results;
-
-    return {
-      props: {
-        data,
-      },
+  useEffect(() => {
+    const fetchDetails = async () => {
+      try {
+        const search = await axios.get(url.search + id);
+        setSearchResults(search.data.results);
+      } catch (error) {
+        console.error("Error fetching details:", error);
+      } finally {
+        setIsLoading(false);
+      }
     };
-  } catch (error) {
-    console.error("Error fetching details:", error);
-    return {
-      props: {
-        data: null, // or handle error as needed
-      },
-    };
-  }
-}
+    fetchDetails();
+  }, []);
+  return (
+    <>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16	sm:grid-cols-5 md:grid-cols-5 pb-16">
+          {search_results.map((anime: any) => (
+            <AnimeCard key={anime.id} anime={anime} />
+          ))}
+        </div>
+      )}
+    </>
+  );
+};
 
 export default Info;
