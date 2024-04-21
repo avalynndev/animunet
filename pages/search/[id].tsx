@@ -53,12 +53,26 @@ const Info = () => {
           ))}
         </div>
       ) : (
-        <div className="pb-96">
-          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16	sm:grid-cols-5 md:grid-cols-5 pb-16">
-            {search_results.map((anime: any) => (
-              <AnimeCard key={anime.id} anime={anime} />
-            ))}
-          </div>
+        <div>
+          {search_results.length === 0 ? (
+            <div className="flex flex-col items-center justify-center h-screen">
+              {" "}
+              <div className="text-4xl font-bold mb-4">
+                No Results Found
+              </div>{" "}
+              <div className="text-gray-500">
+                {" "}
+                Try adjusting your search criteria or check your spelling.{" "}
+              </div>{" "}
+            </div>
+          ) : (
+            <div className="h-screen">
+            <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16 sm:grid-cols-5 md:grid-cols-5 pb-16">
+              {search_results.map((anime: any) => (
+                <AnimeCard key={anime.id} anime={anime} />
+              ))}
+            </div></div>
+          )}
         </div>
       )}
     </>
