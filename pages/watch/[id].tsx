@@ -52,7 +52,7 @@ const Info = () => {
       <div className="max-w-3xl mx-auto px-4 pt-10 h-screen">
         <Skeleton>
           <iframe
-            src={"https://bharadwajpro.github.io/m3u8-player/player/#"}
+            src={""}
             title="Embedded Video"
             width="100%"
             height="450"
@@ -65,7 +65,7 @@ const Info = () => {
     );
   }
   return (
-    <div className="h-screen">
+    <div className="pb-96">
       <iframe
         src={
           "https://bharadwajpro.github.io/m3u8-player/player/#" +

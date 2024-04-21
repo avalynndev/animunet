@@ -1,7 +1,7 @@
 export const url = {
-  popular: "https://animetize-api.vercel.app/anime/gogoanime/popular",
-  top_airing: "https://animetize-api.vercel.app/anime/gogoanime/top-airing",
-  info: "https://animetize-api.vercel.app/anime/gogoanime/info/",
-  episode_link: "https://animetize-api.vercel.app/anime/gogoanime/watch/",
-  search: "https://animetize-api.vercel.app/anime/gogoanime/",
+  popular: process.env.API_URL + "/anime/gogoanime/popular",
+  top_airing: process.env.API_URL + "/anime/gogoanime/top-airing",
+  info: process.env.API_URL + "/anime/gogoanime/info/",
+  episode_link: process.env.API_URL + "/anime/gogoanime/watch/",
+  search: process.env.API_URL + "/anime/gogoanime/",
 };
