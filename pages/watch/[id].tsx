@@ -10,6 +10,12 @@ interface EpisodeDetails {
   title: string;
 }
 
+interface WatchDataSources {
+  url: string;
+  isM3U8: boolean;
+  quality: string;
+}
+
 interface WatchData {
   sources: {
     url: string;
@@ -64,12 +70,21 @@ const Info = () => {
       </div>
     );
   }
+  const defaultSourceUrl = watchData.sources
+    .map((value, index, array) => {
+      const source = value as WatchDataSources;
+      if (source.quality === "default") {
+        return source.url;
+      }
+      return null;
+    })
+    .filter((url) => url !== null)[0];
   return (
     <div className="pb-96">
       <iframe
         src={
           "https://bharadwajpro.github.io/m3u8-player/player/#" +
-          watchData.sources[5].url
+          defaultSourceUrl
         }
         title="Embedded Video"
         width="100%"
