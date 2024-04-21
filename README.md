@@ -9,8 +9,8 @@ Footer ✅
 Navbar ✅ 
 
 Main ❌ - 50% 
-- need to fix card ui, add banner and continue watching..
-- add another name option and TV/Mov option 
+- need to make a better title font, add banner and continue watching..
+- include TV/Movie in anime card
 
 Info ❌ - 70% 
 - recommended anime and related anime (sequel and stuf)
@@ -18,5 +18,5 @@ Info ❌ - 70%
 Watch ❌ - 50%
 - add option to store data in localstorage to make continue watching feature
 
-Additional Features (Very Much Required) ❌ - 0%
-- add good ui for mobile users and fix errors in all pages
+Additional Features (Very Much Required) ❌ - 20%
+- add good ui for mobile users 
