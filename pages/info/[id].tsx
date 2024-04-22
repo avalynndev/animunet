@@ -83,12 +83,8 @@ const Info = () => {
         <div>
           {!data ? (
             <div className="flex flex-col items-center justify-center h-screen">
-              <div className="text-4xl font-bold mb-4">
-                No Results Found
-              </div>
-              <div className="text-gray-500">
-                Took a wrong turn?
-              </div>
+              <div className="text-4xl font-bold mb-4">No Results Found</div>
+              <div className="text-gray-500">Took a wrong turn?</div>
             </div>
           ) : (
             <div>

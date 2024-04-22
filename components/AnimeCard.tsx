@@ -3,7 +3,7 @@ import { Card, CardFooter, CardBody } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function App({ anime }: any) {
+export default function AnimeCard({ anime }: any) {
   const truncatedTitle =
     anime.title.length > 25 ? anime.title.slice(0, 20) + "..." : anime.title;
   return (

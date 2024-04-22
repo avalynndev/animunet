@@ -1,12 +1,12 @@
-import axios from "axios";
-import { Card, CardFooter, CardBody, Skeleton } from "@nextui-org/react";
 import React, { useState, useEffect, useCallback } from "react";
+import { Card, CardFooter, CardBody, Skeleton } from "@nextui-org/react";
 import { url } from "@/config/url";
 import AnimeCard from "@/components/AnimeCard";
 import { useRouter } from "next/router";
+import axios from "axios";
 import Image from "next/image";
 
-const Info = () => {
+const Search = () => {
   const {
     query: { id },
   } = useRouter();
@@ -67,11 +67,12 @@ const Info = () => {
             </div>
           ) : (
             <div className="h-screen">
-            <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16 sm:grid-cols-5 md:grid-cols-5 pb-16">
-              {search_results.map((anime: any) => (
-                <AnimeCard key={anime.id} anime={anime} />
-              ))}
-            </div></div>
+              <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16 sm:grid-cols-5 md:grid-cols-5 pb-16">
+                {search_results.map((anime: any) => (
+                  <AnimeCard key={anime.id} anime={anime} />
+                ))}
+              </div>
+            </div>
           )}
         </div>
       )}
@@ -79,4 +80,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default Search;

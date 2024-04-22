@@ -9,7 +9,8 @@ const EpisodeContainer = ({ data }: any) => {
         <div className="">
           <div className="flex flex-wrap gap-2 items-center">
             {data.episodes.map((episodes: any) => (
-              <Link shallow
+              <Link
+                shallow
                 key={`episode-${data.id}-${episodes.number}`}
                 href={`/watch/${data.id}?episode=${episodes.number}`}
               >

@@ -2,21 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
-  background: transparent;
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: black;
-
-}
-
-::-webkit-scrollbar-thumb {
-  background: transparent;
-  background: aqua;
-  border-radius: 0.2rem;
-}
 
 :root {
   --foreground-rgb: 0, 0, 0;

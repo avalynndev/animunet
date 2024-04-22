@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Skeleton } from "@nextui-org/react";
 import axios from "axios";
+import EpisodeContainer from "@/components/EpisodeContainer";
+import { Skeleton } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { url } from "@/config/url";
-import EpisodeContainer from "@/components/EpisodeContainer";
 
 interface EpisodeDetails {
   id: number;
@@ -22,7 +22,7 @@ interface WatchData {
   }[];
 }
 
-const Info = () => {
+const Watch = () => {
   const {
     query: { id, episode },
   } = useRouter();
@@ -44,7 +44,7 @@ const Info = () => {
       setEpisodeDetails(details_res.data);
     } catch (error) {
       console.error("Error fetching details:", error);
-    } 
+    }
   }, [id]);
 
   console.log("Watch data:", watchData);
@@ -98,4 +98,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default Watch;

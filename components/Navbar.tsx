@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import SearchIcon from "@/components/Icons/SearchIcon";
 
-export default function App({ toggleTheme, theme }:any) {
+export default function NavbarContainer({ toggleTheme, theme }: any) {
   const [searchValue, setSearchValue] = useState(""); // State to store the input value
   const router = useRouter();
 

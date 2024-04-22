@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-export default function App() {
+export default function Footer() {
   return (
     <>
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">

@@ -27,8 +27,8 @@ export default function App({ Component, pageProps }: AppProps) {
     <div
       className={
         theme === "dark"
-          ? "dark text-foreground bg-background"
-          : "light text-foreground bg-background"
+          ? "scrollbar scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-transparent h-screen overflow-y-scroll dark text-foreground bg-background"
+          : "scrollbar scrollbar-thin scrollbar-thumb-cyan-400 scrollbar-track-transparent h-screen overflow-y-scroll light text-foreground bg-background"
       }
     >
       <Navbar toggleTheme={toggleTheme} theme={theme} />

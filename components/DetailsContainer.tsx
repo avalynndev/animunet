@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const DetailsContainer = ({ data }: any) => {
   if (!data) {
-    return <div>Loading</div>;
+    return <div>No Data!</div>;
   }
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
