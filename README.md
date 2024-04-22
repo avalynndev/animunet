@@ -51,7 +51,7 @@ npm install
 
 ### Go to the 'config/url.ts` file, and replace the values
 
-### 3. Run on development &/or production (npm also works)
+### 3. Run on development &/or production
 
 - Run on development mode
 
