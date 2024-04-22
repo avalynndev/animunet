@@ -33,13 +33,10 @@ const Watch = () => {
 
   const fetchDetails = useCallback(async () => {
     try {
-      console.log("Fetching data for episode", id, episode);
       const episode_link = await axios.get(
         url.episode_link + id + "-episode-" + episode
       );
-      console.log("Fetched episode link data", episode_link.data);
       const details_res = await axios.get(url.info + id);
-      console.log("Fetched episode details data", details_res.data);
       setWatchData(episode_link.data);
       setEpisodeDetails(details_res.data);
     } catch (error) {
@@ -47,16 +44,14 @@ const Watch = () => {
     }
   }, [id]);
 
-  console.log("Watch data:", watchData);
-
   useEffect(() => {
     fetchDetails();
   }, [fetchDetails]);
 
   if (!watchData) {
     return (
-      <div className="max-w-3xl mx-auto px-4 pt-10 h-screen">
-        <Skeleton>
+      <div className="max-w-3xl mx-auto px-4 pt-10 pb-4">
+        <Skeleton className="rounded-md">
           <iframe
             src={""}
             title="Embedded Video"

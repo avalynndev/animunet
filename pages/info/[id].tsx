@@ -31,38 +31,12 @@ const Info = () => {
   }, [id, fetchDetails]);
 
   return (
-    <div className="h-screen">
+    <div className="pb-2">
       {isLoading ? (
         <div className="py-8 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto flex">
-            <div className="w-2/3 pr-4">
-              <Skeleton>
-                <h1 className="text-3xl font-semibold">x</h1>
-              </Skeleton>
-              <Skeleton>
-                <p className="mt-2">
-                  <strong>Genres:</strong>xxx
-                </p>
-              </Skeleton>
-              <Skeleton>
-                <p className="mt-2">
-                  <strong>Total Episodes:</strong>xx
-                </p>
-              </Skeleton>
-              <Skeleton>
-                <p className="mt-2">
-                  <strong>Release Date:</strong>xxxx
-                </p>
-              </Skeleton>
-              <Skeleton>
-                <p className="mt-2">
-                  <strong>Description:</strong>
-                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                </p>
-              </Skeleton>
-            </div>{" "}
-            <Skeleton>
-              <div className="w-1/3">
+          <div className="max-w-3xl mx-auto lg:flex">
+            <Skeleton className="rounded-md">
+              <div className="pb-10 pr-5">
                 <div
                   className="rounded-lg overflow-hidden bg-white shadow-md"
                   style={{ width: "250px" }}
@@ -77,6 +51,37 @@ const Info = () => {
                 </div>
               </div>
             </Skeleton>
+            <div className="w-2/3 pr-4">
+              <Skeleton className="rounded-md">
+                <h1 className="text-3xl font-semibold">x</h1>
+              </Skeleton>
+              <Skeleton className="rounded-md">
+                <p className="mt-2">
+                  <strong>Genres:</strong>xxx
+                </p>
+              </Skeleton>
+              <Skeleton className="rounded-md">
+                <p className="mt-2">
+                  <strong>Total Episodes:</strong>xx
+                </p>
+              </Skeleton>
+              <Skeleton className="rounded-md">
+                <p className="mt-2">
+                  <strong>Release Date:</strong>xxxx
+                </p>
+              </Skeleton>
+              <Skeleton className="rounded-md">
+                <p className="mt-2">
+                  <strong>Another Name:</strong>xxxx
+                </p>
+              </Skeleton>
+              <Skeleton className="rounded-md">
+                <p className="mt-2">
+                  <strong>Description:</strong>
+                  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                </p>
+              </Skeleton>
+            </div>
           </div>
         </div>
       ) : (

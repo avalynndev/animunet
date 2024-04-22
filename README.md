@@ -88,18 +88,16 @@ Feel free to contribute to this project! Whether you're an experienced developer
 - [x] Privacy Policy
 - [x] Footer
 - [x] Navbar
-- [ ] Main - 50%
-  - [ ] Improve title font
+- [ ] Main - 60%
   - [ ] Add banner
   - [ ] Continue watching feature
   - [ ] Include TV/Movie in anime card
 - [ ] Info - 70%
   - [ ] Recommended anime
-  - [ ] Related anime (sequel, etc.)
 - [ ] Watch - 50%
   - [ ] Add option to store data in localstorage for continue watching feature
-- [ ] Additional Features (Very Much Required) - 20%
-  - [ ] Improve UI for mobile users
+- [ ] Additional Features? - 100%
+  - [X] Improve UI for mobile users
 
 ## Star History
 

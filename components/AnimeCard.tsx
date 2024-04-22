@@ -12,9 +12,9 @@ export default function AnimeCard({ anime }: any) {
         <CardBody className="overflow-visible py-2">
           <Image
             alt="Card background"
-            className="object-cover rounded-xl h-[250px]"
+            className="object-cover rounded-xl h-[230px]"
             src={anime.image}
-            height={250}
+            height={230}
             width={270}
           />
         </CardBody>
