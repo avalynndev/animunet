@@ -50,7 +50,7 @@ const Watch = () => {
       await sleep(1000);
       setIsLoading(false);
     }
-  }, [id]);
+  }, [id, episode]);
 
   useEffect(() => {
     fetchDetails();
