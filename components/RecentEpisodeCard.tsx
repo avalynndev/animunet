@@ -1,0 +1,30 @@
+import React from "react";
+import { Card, CardFooter, CardBody } from "@nextui-org/react";
+import Link from "next/link";
+import Image from "next/image";
+
+export default function AnimeCard({ anime }: any) {
+  const truncatedTitle =
+    anime.title.length > 25 ? anime.title.slice(0, 20) + "..." : anime.title;
+  return (
+    <Link shallow href={`/watch/${anime.id}?episode=${anime.episodeNumber}`}>
+      <Card isHoverable={true} isPressable className="border-none bg-none">
+        <CardBody className="overflow-visible py-2">
+          <Image
+            alt="Card background"
+            className="object-cover rounded-xl h-[230px]"
+            src={anime.image}
+            height={230}
+            width={270}
+          />
+        </CardBody>
+        <CardFooter className="pt-0 justify-center">
+          <p className="text-tiny text-left">{truncatedTitle}</p>
+        </CardFooter>
+        <CardFooter className="pt-0 justify-center">
+          <p className="text-tiny text-right">EP: {anime.episodeNumber}</p>
+        </CardFooter>
+      </Card>
+    </Link>
+  );
+}

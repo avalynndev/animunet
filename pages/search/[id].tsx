@@ -28,7 +28,7 @@ const Search = () => {
     fetchDetails();
   }, [fetchDetails]);
   return (
-    <div className="pb-1">
+    <div className="pb-0">
       {isLoading ? (
         <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16 sm:grid-cols-5 md:grid-cols-5">
           {Array.from({ length: 20 }, (_, index) => (
