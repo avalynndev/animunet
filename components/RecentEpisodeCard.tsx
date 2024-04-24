@@ -21,9 +21,9 @@ export default function AnimeCard({ anime }: any) {
         <CardFooter className="pt-0 justify-center">
           <p className="text-tiny text-left">{truncatedTitle}</p>
         </CardFooter>
-        <CardFooter className="pt-0 justify-center">
-          <p className="text-tiny text-right">EP: {anime.episodeNumber}</p>
-        </CardFooter>
+        <span className="absolute top-3 right-4 px-2 py-1 bg-black text-foreground-400 rounded-xl text-xs">
+          EP: {anime.episodeNumber}
+        </span>
       </Card>
     </Link>
   );

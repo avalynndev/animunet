@@ -8,7 +8,7 @@ export default function AnimeCard({ anime }: any) {
     anime.title.length > 25 ? anime.title.slice(0, 20) + "..." : anime.title;
   return (
     <Link shallow href={`/info/${anime.id}`}>
-      <Card isPressable className="border-none bg-none">
+      <Card isHoverable={true} isPressable className="border-none bg-none">
         <CardBody className="overflow-visible py-2">
           <Image
             alt="Card background"

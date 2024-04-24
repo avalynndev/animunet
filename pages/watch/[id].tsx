@@ -47,7 +47,7 @@ const Watch = () => {
     } catch (error) {
       console.error("Error fetching details:", error);
     } finally {
-      await sleep(1000);
+      await sleep(5000);
       setIsLoading(false);
     }
   }, [id, episode]);
