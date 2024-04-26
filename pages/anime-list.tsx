@@ -24,7 +24,6 @@ const Anime_List = () => {
   }, []);
   return (
     <div className="text-center max-w mx-auto px-6">
-      <h2 className="text-4xl font-bold mb-4 py-4 font-mono">ANIME LIST</h2>
       {isLoading ? (
         <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
           {Array.from({ length: 20 }, (_, index) => (

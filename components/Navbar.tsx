@@ -28,11 +28,9 @@ export default function NavbarContainer({ toggleTheme, theme }: any) {
   return (
     <>
       <Navbar>
-        <NavbarBrand>
-          <Link color="foreground" href="/">
-            <p className="font-bold text-inherit">ANIMUNET</p>
-          </Link>
-        </NavbarBrand>
+        <Link color="foreground" href="/">
+          <p className="font-bold text-xl text-mono">ANIMUNET</p>
+        </Link>
         <NavbarContent className="">
           <Input
             classNames={{
@@ -51,17 +49,18 @@ export default function NavbarContainer({ toggleTheme, theme }: any) {
             onKeyPress={handleKeyPress}
           />
         </NavbarContent>
-        <NavbarContent justify="end">
-          <Button
-            isIconOnly
-            color={theme === "light" ? "secondary" : "primary"}
-            variant="shadow"
-            onClick={toggleTheme}
-            className={theme === "light" ? "light-button" : "dark-button"}
-          >
-            {theme === "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
-          </Button>
-        </NavbarContent>
+        <Link color="foreground" href="/anime-list">
+          <p className="text-sm">ANIME LIST</p>
+        </Link>
+        <Button
+          isIconOnly
+          color={theme === "light" ? "secondary" : "primary"}
+          variant="shadow"
+          onClick={toggleTheme}
+          className={theme === "light" ? "light-button" : "dark-button"}
+        >
+          {theme === "light" ? <IoMoonOutline /> : <IoSunnyOutline />}
+        </Button>
       </Navbar>
     </>
   );
