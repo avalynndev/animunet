@@ -16,7 +16,7 @@
     "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.8",
     "framer-motion": "^11.1.7",
-    "next": "14.2.2",
+    "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.1.0",
