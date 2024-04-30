@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function AnimeCard({ anime }: any) {
   const truncatedTitle =
-    anime.title.length > 25 ? anime.title.slice(0, 20) + "..." : anime.title;
+    anime.title.length > 24 ? anime.title.slice(0, 20) + "..." : anime.title;
   return (
-    <Link shallow href={`/watch/${anime.id}?episode=${anime.episodeNumber}`}>
+    <Link shallow href={`/watch/${anime.id}/${anime.episodeNumber}`}>
       <Card isHoverable={true} isPressable className="border-none bg-none">
         <CardBody className="overflow-visible py-2">
           <Image
