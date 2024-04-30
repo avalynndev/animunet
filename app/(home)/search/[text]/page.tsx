@@ -1,34 +1,35 @@
-import React, { useState, useEffect, useCallback } from "react";
+"use client";
+import React, { useState, useEffect, useCallback, Suspense } from "react";
 import { Card, CardFooter, CardBody, Skeleton } from "@nextui-org/react";
 import { url } from "@/config/url";
 import AnimeCard from "@/components/AnimeCard";
-import { useRouter } from "next/router";
+import Loading from "@/components/Loading";
 import axios from "axios";
 import Image from "next/image";
 
-const Search = () => {
-  const {
-    query: { id },
-  } = useRouter();
+const Search = ({ params }:any) => {
+  const { text } = params;
   const [isLoading, setIsLoading] = useState(true);
   const [search_results, setSearchResults] = useState<any[]>([]);
 
   const fetchDetails = useCallback(async () => {
     try {
-      const search = await axios.get(url.search + id);
+      const search = await axios.get(url.search + text);
       setSearchResults(search.data.results);
     } catch (error) {
       console.error("Error fetching details:", error);
     } finally {
       setIsLoading(false);
     }
-  }, [id]);
+  }, [text]);
 
   useEffect(() => {
     fetchDetails();
   }, [fetchDetails]);
   return (
-    <div className="pb-0">
+    <div className="text-center max-w mx-auto px-6 pb-3">
+      <Suspense fallback={<Loading />}>
+
       {isLoading ? (
         <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16 sm:grid-cols-5 md:grid-cols-5">
           {Array.from({ length: 20 }, (_, index) => (
@@ -62,16 +63,15 @@ const Search = () => {
               </div>
             </div>
           ) : (
-            <div className="h-screen">
               <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16 sm:grid-cols-5 md:grid-cols-5 ">
                 {search_results.map((anime: any) => (
                   <AnimeCard key={anime.id} anime={anime} />
                 ))}
               </div>
-            </div>
           )}
         </div>
       )}
+      </Suspense>
     </div>
   );
 };

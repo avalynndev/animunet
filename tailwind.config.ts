@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { nextui } from '@nextui-org/react'
+import { nextui } from "@nextui-org/react";
 
 const config: Config = {
   content: [
@@ -19,7 +19,7 @@ const config: Config = {
     },
   },
   plugins: [
-    require('tailwind-scrollbar'),
+    require("tailwind-scrollbar"),
     nextui({
       prefix: "nextui", // prefix for themes variables
       addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").

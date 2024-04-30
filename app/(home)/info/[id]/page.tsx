@@ -1,15 +1,13 @@
+"use client"
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Skeleton } from "@nextui-org/react";
 import { url } from "@/config/url";
 import DetailsContainer from "@/components/DetailsContainer";
 import EpisodeContainer from "@/components/EpisodeContainer";
-import { useRouter } from "next/router";
 
-const Info = () => {
-  const {
-    query: { id },
-  } = useRouter();
+const Info = ({ params }:any) => {
+  const { id } = params;
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<any>();
 

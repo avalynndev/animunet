@@ -34,7 +34,7 @@ export default function NavbarContainer({ toggleTheme, theme }: any) {
         <NavbarContent className="">
           <Input
             classNames={{
-              base: "lg:w-full h-10 sm:w-96",
+              base: "lg:w-full h-10 sm:w-full",
               mainWrapper: "h-full",
               input: "text-small",
               inputWrapper:
@@ -49,9 +49,6 @@ export default function NavbarContainer({ toggleTheme, theme }: any) {
             onKeyPress={handleKeyPress}
           />
         </NavbarContent>
-        <Link color="foreground" href="/anime-list">
-          <p className="text-sm">ANIME LIST</p>
-        </Link>
         <Button
           isIconOnly
           color={theme === "light" ? "secondary" : "primary"}

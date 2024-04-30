@@ -12,7 +12,7 @@ const EpisodeContainer = ({ data }: any) => {
               <Link
                 shallow
                 key={`episode-${data.id}-${episodes.number}`}
-                href={`/watch/${data.id}?episode=${episodes.number}`}
+                href={`/watch/${data.id}/${episodes.number}`}
               >
                 <Button
                   color="primary"
