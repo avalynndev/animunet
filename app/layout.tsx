@@ -3,9 +3,9 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: `Animeverse || Watch Anime Online For Free`,
+  title: `Animunet || Watch Anime Online For Free`,
   description:
-    "Welcome to Animeverse – your ultimate anime destination! Stream your favorite anime titles in sync with friends and explore a vast library of series and movies. Join our vibrant community for an unforgettable anime-watching experience!",
+    "Welcome to Animeverse – your ultimate anime destination! Stream your favorite anime titles in sync with friends and explore a vast library of series and movies.",
   keywords: [
     "anime",
     "streaming",
@@ -22,8 +22,8 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "Animeverse",
-      url: "https://animeverse-sagas.vercel.app/",
+      name: "avalynndev",
+      url: "https://avalynn.vercel.app/",
     },
   ],
   revision: "1.0",
