@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: `Animunet || Watch Anime Online For Free`,
   description:
-    "Welcome to Animeverse – your ultimate anime destination! Stream your favorite anime titles in sync with friends and explore a vast library of series and movies.",
+    "Welcome to Animunet – your ultimate anime destination! Stream your favorite anime titles in sync with friends and explore a vast library of series and movies.",
   keywords: [
     "anime",
     "streaming",
