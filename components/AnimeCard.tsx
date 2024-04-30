@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function AnimeCard({ anime }: any) {
   const truncatedTitle =
-    anime.title.length > 25 ? anime.title.slice(0, 20) + "..." : anime.title;
+    anime.title.length > 24 ? anime.title.slice(0, 20) + "..." : anime.title;
   return (
     <Link shallow href={`/info/${anime.id}`}>
       <Card isHoverable={true} isPressable className="border-none bg-none">
