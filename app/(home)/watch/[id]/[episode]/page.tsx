@@ -102,7 +102,6 @@ const Watch = ({ params }: any) => {
         <MediaPlayer src={defaultSourceUrl || ""}>
           <MediaProvider />
           <DefaultVideoLayout
-            thumbnails="https://files.vidstack.io/sprite-fight/thumbnails.vtt"
             icons={defaultLayoutIcons}
           />
         </MediaPlayer>
