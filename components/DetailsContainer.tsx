@@ -28,7 +28,7 @@ const DetailsContainer = ({ data }: any) => {
         <div className=" pr-4">
           <h1 className="text-3xl font-semibold">{data.title}</h1>
           <p className="mt-2">
-            <strong>Another Name:</strong> {data.otherName}
+            <strong>Another Name:</strong> {data.otherName.split('\n').filter(Boolean).join(', ')}
           </p>
           <p className="mt-2">
             <strong>Genres:</strong> {data.genres.join(", ")}
