@@ -97,6 +97,7 @@ Feel free to contribute to this project! Whether you're an experienced developer
 - [ ] Watch - 50%
   - [ ] Add option to store data in localstorage for continue watching feature
 - [ ] Additional Features? - 100%
+  - [X] Improve Episode Container 
   - [X] Improve UI for mobile users
 
 ## Star History
