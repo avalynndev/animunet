@@ -20,7 +20,7 @@ const EpisodeContainer = ({ data }: any) => {
                   key={episodes.id}
                   href={episodes.url}
                 >
-                  Episode {episodes.number}
+                  {episodes.number}
                 </Button>
               </Link>
             ))}
