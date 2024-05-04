@@ -7,7 +7,7 @@ const DetailsContainer = ({ data }: any) => {
   }
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto lg:flex">
+      <div className="max-w-5xl mx-auto lg:flex">
         <div className="pb-10 pr-5">
           <div
             className="rounded-lg overflow-hidden bg-white shadow-md"

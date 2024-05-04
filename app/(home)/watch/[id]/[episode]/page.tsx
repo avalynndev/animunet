@@ -64,7 +64,7 @@ const Watch = ({ params }: any) => {
 
   if (!watchData) {
     return (
-      <div className="max-w-3xl mx-auto px-4 pt-10 pb-4">
+      <div className="max-w-4xl mx-auto px-4 pt-10 pb-4">
         {isLoading ? (
           <div className="flex flex-col items-center justify-center pb-5"></div>
         ) : (
@@ -97,16 +97,14 @@ const Watch = ({ params }: any) => {
     })
     .filter((url) => url !== null)[0];
   return (
-    <div className="pb-96 max-w-3xl mx-auto px-4 pt-10">
-      <>
+    <div className="pb-1 mx-auto px-4 pt-10">
+      <div className="max-w-4xl mx-auto flex">
         <MediaPlayer src={defaultSourceUrl || ""}>
           <MediaProvider />
-          <DefaultVideoLayout
-            icons={defaultLayoutIcons}
-          />
+          <DefaultVideoLayout icons={defaultLayoutIcons} />
         </MediaPlayer>
-        <EpisodeContainer data={episodeDetails} />
-      </>
+      </div>
+      <EpisodeContainer data={episodeDetails} />
     </div>
   );
 };
