@@ -25,6 +25,7 @@ const EpisodeContainer = ({ data }: any) => {
           href={`/watch/${data.id}/${episode.number}`}
         >
           <Button
+            isIconOnly
             color="primary"
             variant="shadow"
             key={episode.id}
