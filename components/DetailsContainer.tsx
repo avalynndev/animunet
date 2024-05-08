@@ -1,10 +1,28 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@nextui-org/react";
 
 const DetailsContainer = ({ data }: any) => {
   if (!data) {
     return <div>No Data!</div>;
   }
+  const getRandomColor = ():
+    | "secondary"
+    | "primary"
+    | "success"
+    | "danger"
+    | "warning" => {
+    const colors: (
+      | "secondary"
+      | "primary"
+      | "success"
+      | "danger"
+      | "warning"
+    )[] = ["primary", "secondary", "success", "danger", "warning"];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+  };
   return (
     <div className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto lg:flex">
@@ -28,12 +46,30 @@ const DetailsContainer = ({ data }: any) => {
         <div className=" pr-4">
           <h1 className="text-3xl font-semibold">{data.title}</h1>
           <p className="mt-2">
-            <strong>Another Name:</strong> {data.otherName.split('\n').filter(Boolean).join(', ')}
+            <strong>Another Name:</strong>{" "}
+            {data.otherName.split("\n").filter(Boolean).join(", ")}
           </p>
-          <p className="mt-2">
-            <strong>Genres:</strong> {data.genres.join(", ")}
+          <p className="mt-2 gap-2">
+            <strong>Genres: </strong>
+            <div className="mt-2 gap-2 flex">
+              {data.genres.map((genre: any, index: any) => (
+                <Link
+                  href={`/genre/${genre.toLowerCase().replace(/ /g, "-")}`}
+                  key={index}
+                  className="gap-8"
+                >
+                  <Button
+                    color={getRandomColor()}
+                    size="sm"
+                    className="text-white"
+                  >
+                    {genre.trim()}
+                  </Button>
+                </Link>
+              ))}
+            </div>
           </p>
-          <p className="mt-2">
+          <p className="mt-4">
             <strong>Total Episodes:</strong> {data.totalEpisodes}
           </p>
           <p className="mt-2">

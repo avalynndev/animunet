@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import EpisodeContainer from "@/components/EpisodeContainer";
-import { Skeleton } from "@nextui-org/react";
+import { Skeleton, BreadcrumbItem, Breadcrumbs } from "@nextui-org/react";
 import "@vidstack/react/player/styles/default/theme.css";
 import "@vidstack/react/player/styles/default/layouts/video.css";
 import { MediaPlayer, MediaProvider } from "@vidstack/react";
@@ -11,6 +11,7 @@ import {
   DefaultVideoLayout,
 } from "@vidstack/react/player/layouts/default";
 import { url } from "@/config/url";
+import Link from "next/link";
 
 interface EpisodeDetails {
   id: number;
@@ -98,6 +99,20 @@ const Watch = ({ params }: any) => {
     .filter((url) => url !== null)[0];
   return (
     <div className="pb-1 mx-auto px-4 pt-10">
+      <div className="pb-4">
+        <div className="flex flex-col text-center items-center justify-center">
+          <div className="flex flex-col flex-wrap pb-2">
+            <Breadcrumbs size="lg">
+              <BreadcrumbItem>
+                <Link href={`/info/${id}`}>
+                  {id.charAt(0).toUpperCase() + id.slice(1)}
+                </Link>
+              </BreadcrumbItem>
+              <BreadcrumbItem>{episode}</BreadcrumbItem>
+            </Breadcrumbs>
+          </div>
+        </div>
+      </div>
       <div className="max-w-4xl mx-auto flex">
         <MediaPlayer src={defaultSourceUrl || ""}>
           <MediaProvider />

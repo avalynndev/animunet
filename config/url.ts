@@ -7,4 +7,5 @@ export const url = {
   recent_episodes: "https://animetize-api.vercel.app/recent-episodes",
   anime_list: "https://animetize-api.vercel.app/anime-list",
   search: "https://animetize-api.vercel.app/",
+  genre: "https://animetize-api.vercel.app/genre",
 };

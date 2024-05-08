@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import {
   Navbar,
-  NavbarBrand,
+  NavbarItem,
+  DropdownTrigger,
+  DropdownItem,
+  Dropdown,
+  DropdownMenu,
   NavbarContent,
   Link,
   Button,
   Input,
 } from "@nextui-org/react";
+import DropdownIcon from "@/components/Icons/Dropdown";
 import { useRouter } from "next/navigation";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 import SearchIcon from "@/components/Icons/SearchIcon";
@@ -32,6 +37,47 @@ export default function NavbarContainer({ toggleTheme, theme }: any) {
           <p className="font-bold text-xl text-mono">ANIMUNET</p>
         </Link>
         <NavbarContent className="">
+          <Dropdown>
+            <NavbarItem>
+              <DropdownTrigger>
+                <Button
+                  disableRipple
+                  className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+                  radius="sm"
+                  endContent={<DropdownIcon fill="currentColor" size={16} />}
+                  variant="light"
+                >
+                  Navigation
+                </Button>
+              </DropdownTrigger>
+            </NavbarItem>
+            <DropdownMenu
+              aria-label="ACME features"
+              className="w-[340px]"
+              itemClasses={{
+                base: "gap-4",
+              }}
+            >
+              <DropdownItem
+                as={Link}
+                href="/genre"
+                key="genre"
+                description="Here's a diverse list of genres spanning different forms.."
+                className="text-black"
+              >
+                Genre
+              </DropdownItem>
+              <DropdownItem
+                as={Link}
+                href="/anime-list"
+                key="animelist"
+                description="List of all available animes you can browse through.."
+                className="text-black"
+              >
+                Anime
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
           <Input
             classNames={{
               base: "lg:w-full h-10 sm:w-full",

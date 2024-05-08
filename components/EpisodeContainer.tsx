@@ -11,6 +11,23 @@ const EpisodeContainer = ({ data }: any) => {
     setSelectedGroup(value);
   };
 
+  const getRandomColor = ():
+    | "secondary"
+    | "primary"
+    | "success"
+    | "danger"
+    | "warning" => {
+    const colors: (
+      | "secondary"
+      | "primary"
+      | "success"
+      | "danger"
+      | "warning"
+    )[] = ["primary", "secondary", "success", "danger", "warning"];
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return colors[randomIndex];
+  };
+
   const renderEpisodeButtons = () => {
     const startIndex = selectedGroup * 100;
     const endIndex = Math.min(startIndex + 100, episodes.length);
@@ -25,9 +42,9 @@ const EpisodeContainer = ({ data }: any) => {
           href={`/watch/${data.id}/${episode.number}`}
         >
           <Button
-            isIconOnly
-            color="primary"
+            color={getRandomColor()}
             variant="shadow"
+            isIconOnly
             key={episode.id}
             href={episode.url}
           >
