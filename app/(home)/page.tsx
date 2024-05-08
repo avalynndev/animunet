@@ -5,7 +5,7 @@ import RecentEpisodeCard from "@/components/RecentEpisodeCard";
 import React, { useState, useEffect, Suspense } from "react";
 import AnimeCard from "@/components/AnimeCard";
 import { url } from "@/config/url";
-import Image from 'next/image'
+import Image from "next/image";
 
 const Main = () => {
   const [isLoading, setIsLoading] = useState(true);

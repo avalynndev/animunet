@@ -62,7 +62,7 @@ export default function NavbarContainer({ toggleTheme, theme }: any) {
                 as={Link}
                 href="/genre"
                 key="genre"
-                description="Here's a diverse list of genres spanning different forms.."
+                description="Here&apos;s a diverse list of genres spanning different forms.."
                 className="text-black"
               >
                 Genre

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, useCallback, Suspense } from "react";
 import { Spinner } from "@nextui-org/react";
 import { url } from "@/config/url";
 import AnimeCard from "@/components/AnimeCard";
@@ -10,7 +10,7 @@ const Anime_List = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [search_results, setSearchResults] = useState<any[]>([]);
 
-  const fetchDetails = async () => {
+  const fetchDetails = useCallback(async () => {
     try {
       const search = await axios.get(url.anime_list);
       setSearchResults(search.data.results);
@@ -19,7 +19,7 @@ const Anime_List = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  },[]);
 
   useEffect(() => {
     fetchDetails();

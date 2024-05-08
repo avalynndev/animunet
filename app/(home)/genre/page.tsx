@@ -5,8 +5,7 @@ import { url } from "@/config/url";
 import axios from "axios";
 import Link from "next/link";
 
-const Genre = ({ params }: any) => {
-  const { text } = params;
+const Genre = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [genres, setGenres] = useState<any[]>([]);
 
@@ -20,7 +19,7 @@ const Genre = ({ params }: any) => {
     } finally {
       setIsLoading(false);
     }
-  }, [text]);
+  }, []);
 
   useEffect(() => {
     fetchDetails();
@@ -47,7 +46,7 @@ const Genre = ({ params }: any) => {
       <div className="flex flex-col text-center items-center justify-center">
         <div className="text-4xl font-bold mb-4">Genres</div>
         <div className="text-gray-500 pb-16">
-          Here's a diverse list of genres spanning different forms.
+          Here&apos;s a diverse list of genres spanning different forms.
         </div>
         {isLoading ? (
           <div className="flex items-center justify-center">
