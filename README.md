@@ -24,7 +24,7 @@ Enjoy your favorite shows with English subs or dubs, and no sign-up required!
   <details>
   <summary>Screenshots [View More]</summary>
   <br>
-  <img src="https://api.microlink.io/?url=https://animunet.vercel.app/watch/ore-dake-level-up-na-ken?episode=2&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=4400&type=jpeg&overlay.browser=dark&overlay.background=linear-gradient%28225deg%2C+%23FF057C+0%25%2C+%238D0B93+50%25%2C+%23321575+100%25%29" alt="Watch Page" style="max-width: 70%;">
+  <img src="https://api.microlink.io/?url=https://animunet.vercel.app/watch/ore-dake-level-up-na-ken/2&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=4400&type=jpeg&overlay.browser=dark&overlay.background=linear-gradient%28225deg%2C+%23FF057C+0%25%2C+%238D0B93+50%25%2C+%23321575+100%25%29" alt="Watch Page" style="max-width: 70%;">
   <img src="https://api.microlink.io/?url=https://animunet.vercel.app/info/ore-dake-level-up-na-ken&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=4510&type=jpeg&overlay.browser=dark&overlay.background=linear-gradient%28225deg%2C+%23FF057C+0%25%2C+%238D0B93+50%25%2C+%23321575+100%25%29" alt="Info" style="max-width: 70%;">
   </details>
 </div>
