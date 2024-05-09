@@ -47,7 +47,7 @@ export default function NavbarContainer({ toggleTheme, theme }: any) {
                   endContent={<DropdownIcon fill="currentColor" size={16} />}
                   variant="light"
                 >
-                  Navigation
+                  
                 </Button>
               </DropdownTrigger>
             </NavbarItem>
