@@ -50,6 +50,7 @@ const EpisodeContainer = ({ data }: any) => {
 						href={episode.url}
 						onClick={() =>
 							save_to_local(
+								data.id,
 								data.title,
 								episode.number,
 								data.image,
@@ -115,12 +116,14 @@ const EpisodeContainer = ({ data }: any) => {
 };
 
 const save_to_local = (
+	id: string,
 	title: string,
 	episode: number,
 	image: URL,
 	type: string
 ): void => {
 	const data: any = {
+		id: id,
 		title: title,
 		image: image,
 		episode_number: episode,

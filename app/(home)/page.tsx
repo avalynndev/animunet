@@ -12,10 +12,51 @@ import React, { useState, useEffect, Suspense } from "react";
 import AnimeCard from "@/components/AnimeCard";
 import { url } from "@/config/url";
 import Image from "next/image";
+import Link from 'next/link'
 
 interface Anime {
   id: number;
+  title: string;
 }
+
+const AnimeHistoryItem = ({ animeHistory }:any) => {
+
+  return (
+    <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
+      {animeHistory.map((item: any, index: any) => (
+        <div key={index}>
+          <Link shallow href={`/info/${item.id}`}>
+            <Card
+              isHoverable={true}
+              isPressable
+              className="border-none bg-none"
+            >
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl h-[230px] w-[270px]"
+                  src={item.image}
+                  height={230}
+                  width={270}
+                />
+              </CardBody>
+              <CardFooter className="pt-0">
+                <p className="text-tiny text-center">
+                  {item.title.length > 24
+                    ? item.title.slice(0, 20) + "..."
+                    : item.title}
+                </p>
+              </CardFooter>
+              <span className="absolute top-3 right-4 px-2 py-1 bg-black text-foreground-400 rounded-xl text-xs">
+                EP: {item.episode_number}
+              </span>
+            </Card>
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 const Main = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,6 +64,7 @@ const Main = () => {
   const [popular, setPopular] = useState<Anime[]>([]);
   const [recentEpisodes, setRecentEpisodes] = useState<Anime[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [localItems, setLocalItems] = useState({ AnimeHistory: [] });
 
   const fetchTopAiring = async () => {
     try {
@@ -51,6 +93,17 @@ const Main = () => {
     }
   };
 
+  function get_local() {
+    try {
+      const data = localStorage.getItem("watchHistory");
+      return JSON.parse(data || "");
+    } catch (error) {
+      console.log("error", error);
+      return false;
+    }
+  }
+  
+
   useEffect(() => {
     const fetchDetails = async () => {
       await Promise.all([
@@ -61,9 +114,56 @@ const Main = () => {
       setIsLoading(false);
     };
     fetchDetails();
+    const newData = get_local();
+    setLocalItems(newData);
   }, []);
+
   return (
-   <div className="text-center max-w mx-auto px-6">
+    <div className="text-center max-w mx-auto px-6">
+      <h2 className="text-4xl font-bold mb-4 py-4 font-mono">
+        CONTINUE WATCHING
+      </h2>
+      <Suspense fallback={<Spinner color="success" size="lg" />}>
+        {isLoading ? (
+          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
+            {Array.from({ length: 10 }, (_, index) => (
+              <Card isPressable className="border-none bg-none" key={index}>
+                <CardBody className="overflow-visible py-2">
+                  <Skeleton className="rounded-md">
+                    <Image
+                      alt="Anime Banner"
+                      className="object-cover rounded-xl h-[230px] w-[270px]"
+                      src={
+                        "https://gogocdn.net/cover/kusuriya-no-hitorigoto-1696009733.png"
+                      }
+                      height={230}
+                      width={270}
+                    />
+                  </Skeleton>
+                </CardBody>
+                <CardFooter className="pt-0">
+                  <Skeleton className="rounded-md">
+                    <p className="text-tiny text-center">
+                      Anime Name here prob
+                    </p>
+                  </Skeleton>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div>
+            {localItems.AnimeHistory != null && (
+              <AnimeHistoryItem animeHistory={localItems.AnimeHistory} />
+            )}
+            <div className="flex flex-col text-center items-center justify-center ">
+              <div className="text-gray-500 ">
+                Keep watching more and easily continue watching from here..!!
+              </div>
+            </div>
+          </div>
+        )}
+      </Suspense>
       <Suspense fallback={<Spinner color="success" size="lg" />}>
         <h2 className="text-4xl font-bold mb-4 py-4 font-mono">TOP AIRING</h2>
         {isLoading ? (
