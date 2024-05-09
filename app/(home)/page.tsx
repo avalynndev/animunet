@@ -25,7 +25,7 @@ const AnimeHistoryItem = ({ animeHistory }:any) => {
     <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
       {animeHistory.map((item: any, index: any) => (
         <div key={index}>
-          <Link shallow href={`/info/${item.id}`}>
+          <Link shallow href={`/watch/${item.id}/${item.episode_number}`}>
             <Card
               isHoverable={true}
               isPressable
@@ -156,11 +156,13 @@ const Main = () => {
             {localItems.AnimeHistory != null && (
               <AnimeHistoryItem animeHistory={localItems.AnimeHistory} />
             )}
+            {localItems.AnimeHistory == null && (
             <div className="flex flex-col text-center items-center justify-center ">
               <div className="text-gray-500 ">
                 Keep watching more and easily continue watching from here..!!
               </div>
             </div>
+          )}
           </div>
         )}
       </Suspense>
