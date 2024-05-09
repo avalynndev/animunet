@@ -95,7 +95,7 @@ const Main = () => {
           </div>
         ) : (
           <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-            {top_airing.map((anime: any) => (
+            {topAiring.map((anime: any) => (
               <AnimeCard key={anime.id} anime={anime} />
             ))}
           </div>
@@ -171,7 +171,7 @@ const Main = () => {
           </div>
         ) : (
           <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-            {recent_episodes.map((anime: any) => (
+            {recentEpisodes.map((anime: any) => (
               <RecentEpisodeCard key={anime.id} anime={anime} />
             ))}
           </div>
