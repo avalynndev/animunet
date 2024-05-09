@@ -41,13 +41,13 @@ export default function NavbarContainer({ toggleTheme, theme }: any) {
             <NavbarItem>
               <DropdownTrigger>
                 <Button
+                  isIconOnly
                   disableRipple
                   className="p-0 bg-transparent data-[hover=true]:bg-transparent"
                   radius="sm"
-                  endContent={<DropdownIcon fill="currentColor" size={16} />}
                   variant="light"
                 >
-                  
+                 <DropdownIcon fill="currentColor" size={16} /> 
                 </Button>
               </DropdownTrigger>
             </NavbarItem>
