@@ -1,16 +1,10 @@
 "use client";
-import React, { useState, useEffect, useCallback, Suspense } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
-  Card,
-  CardFooter,
-  CardBody,
-  Skeleton,
   Spinner,
 } from "@nextui-org/react";
 import { url } from "@/config/url";
-import AnimeCard from "@/components/AnimeCard";
 import axios from "axios";
-import Image from "next/image";
 import DetailsContainer from "@/components/DetailsContainer";
 import EpisodeContainer from "@/components/EpisodeContainer";
 
