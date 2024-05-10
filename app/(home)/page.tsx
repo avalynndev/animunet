@@ -94,7 +94,7 @@ const Main = () => {
 
   function get_local() {
     try {
-      return JSON.parse(localStorage.getItem("animeHistory") || "");
+      return JSON.parse(localStorage.getItem("watchHistory") || "");
     } catch (error) {
       console.log("error", error);
       return false;
