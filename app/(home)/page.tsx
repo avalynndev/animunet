@@ -21,11 +21,7 @@ interface Anime {
   title: string;
 }
 
-const AnimeHistoryItem = ({ animeHistory, onDelete }: any) => {
-  console.log(animeHistory)
-  const handleDelete = (itemId: number) => {
-    onDelete(itemId);
-  };
+const AnimeHistoryItem = ({ animeHistory }: any) => {
   return (
     <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
       {animeHistory.map((item: any, index: any) => (
@@ -55,15 +51,6 @@ const AnimeHistoryItem = ({ animeHistory, onDelete }: any) => {
               <span className="absolute top-3 right-4 px-2 py-1 bg-black text-foreground-400 rounded-xl text-xs">
                 EP: {item.episode_number}
               </span>
-              <Button
-                size="sm"
-                isIconOnly
-                onClick={() => handleDelete(item.id)} // Pass the item ID to the delete function
-                color="danger"
-                className="absolute top-3 left-4 px-2 py-1 text-white rounded-md text-xs"
-              >
-                <GiCrossMark />
-              </Button>
             </Card>
           </Link>
         </div>
@@ -79,18 +66,6 @@ const Main = () => {
   const [recentEpisodes, setRecentEpisodes] = useState<Anime[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [localItems, setLocalItems] = useState({ AnimeHistory: [] });
-
-  const handleDeleteItem = (itemId: number) => {
-    try {
-      const updatedHistory = localItems.AnimeHistory.filter(
-        (item: any) => item.id !== itemId
-      );
-      localStorage.setItem("watchHistory", JSON.stringify(updatedHistory));
-      setLocalItems({ AnimeHistory: updatedHistory });
-    } catch (error) {
-      console.log("Error deleting item from local storage:", error);
-    }
-  };
 
   const fetchTopAiring = async () => {
     try {
@@ -182,7 +157,6 @@ const Main = () => {
             {localItems.AnimeHistory != null && (
               <AnimeHistoryItem
                 animeHistory={localItems.AnimeHistory}
-                onDelete={handleDeleteItem}
               />
             )}
             {localItems.AnimeHistory == null && (
