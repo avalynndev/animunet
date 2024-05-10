@@ -7,7 +7,7 @@ interface data_types {
 
 const SaveToLocalStorage = (data: data_types) => {
     try {
-        const jsonData = localStorage.getItem("watchHistory")
+        const jsonData = localStorage.getItem("AnimeHistory");
         const dataObject = jsonData ? JSON.parse(jsonData) : {}
 
         if (!dataObject.AnimeHistory) {
@@ -29,7 +29,7 @@ const SaveToLocalStorage = (data: data_types) => {
         }
 
         let updatedData = JSON.stringify(dataObject)
-        localStorage.setItem("watchHistory", updatedData)
+        localStorage.setItem("AnimeHistory", updatedData)
     } catch (error) {
         console.log("Some error occured while saving the data. Please contact the DEVs.")
     }

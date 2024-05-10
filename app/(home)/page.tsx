@@ -5,10 +5,8 @@ import {
   CardFooter,
   CardBody,
   Skeleton,
-  Button,
   Spinner,
 } from "@nextui-org/react";
-import { GiCrossMark } from "react-icons/gi";
 import RecentEpisodeCard from "@/components/RecentEpisodeCard";
 import React, { useState, useEffect, Suspense } from "react";
 import AnimeCard from "@/components/AnimeCard";
@@ -96,7 +94,7 @@ const Main = () => {
 
   function get_local() {
     try {
-      const data = localStorage.getItem("watchHistory");
+      const data = localStorage.getItem("AnimeHistory");
       return JSON.parse(data || "");
     } catch (error) {
       console.log("error", error);
