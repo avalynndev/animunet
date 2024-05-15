@@ -7,7 +7,12 @@ export default function AnimeCard({ anime }: any) {
   const truncatedTitle =
     anime.title.length > 20 ? anime.title.slice(0, 17) + "..." : anime.title;
   return (
-    <Link shallow href={`/watch/${anime.id}/${anime.episodeNumber}`}>
+    <Link
+      shallow
+      href={`/watch/${anime.id}/${anime.episodeNumber
+        .toString()
+        .replace(/\./g, "-")}`}
+    >
       <Card
         isHoverable={true}
         isPressable

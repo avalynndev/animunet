@@ -24,7 +24,12 @@ const AnimeHistoryItem = ({ animeHistory }: any) => {
     <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
       {animeHistory.map((item: any, index: any) => (
         <div key={index}>
-          <Link shallow href={`/watch/${item.id}/${item.episode_number}`}>
+          <Link
+            shallow
+            href={`/watch/${item.id}/${item.episode_number
+              .toString()
+              .replace(/\./g, "-")}`}
+          >
             <Card
               isHoverable={true}
               isPressable
