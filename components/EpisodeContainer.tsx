@@ -40,7 +40,7 @@ const EpisodeContainer = ({ data }: any) => {
 				<Link
 					shallow
 					key={`episode-${data.id}-${episode.number}`}
-					href={`/watch/${data.id}/${episode.number}`}
+					href={`/watch/${data.id}/${episode.number.replace(/\./g, '-');}`}
 				>
 					<Button
 						color={getRandomColor()}
