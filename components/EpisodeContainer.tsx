@@ -37,31 +37,33 @@ const EpisodeContainer = ({ data }: any) => {
 		for (let i = startIndex; i < endIndex; i++) {
 			const episode = episodes[i];
 			episodeButtons.push(
-				<Link
-					shallow
-					key={`episode-${data.id}-${episode.number}`}
-					href={`/watch/${data.id}/${episode.number.replace(/\./g, '-');}`}
-				>
-					<Button
-						color={getRandomColor()}
-						variant="shadow"
-						isIconOnly
-						key={episode.id}
-						href={episode.url}
-						onClick={() =>
-							save_to_local(
-								data.id,
-								data.title,
-								episode.number,
-								data.image,
-								"anime"
-							)
-						}
-					>
-						{episode.number}
-					</Button>
-				</Link>
-			);
+        <Link
+          shallow
+          key={`episode-${data.id}-${episode.number}`}
+          href={`/watch/${data.id}/${episode.number
+            .toString()
+            .replace(/\./g, "-")}`}
+        >
+          <Button
+            color={getRandomColor()}
+            variant="shadow"
+            isIconOnly
+            key={episode.id}
+            href={episode.url}
+            onClick={() =>
+              save_to_local(
+                data.id,
+                data.title,
+                episode.number,
+                data.image,
+                "anime"
+              )
+            }
+          >
+            {episode.number}
+          </Button>
+        </Link>
+      );
 		}
 		return episodeButtons;
 	};
