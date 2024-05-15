@@ -21,7 +21,7 @@ interface Anime {
 
 const AnimeHistoryItem = ({ animeHistory }: any) => {
   return (
-    <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
+    <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
       {animeHistory.map((item: any, index: any) => (
         <div key={index}>
           <Link shallow href={`/watch/${item.id}/${item.episode_number}`}>
@@ -116,171 +116,163 @@ const Main = () => {
     setLocalItems(newData);
   }, []);
 
-  return (
-    <div className="text-center max-w mx-auto px-6">
-      <h2 className="text-4xl font-bold mb-4 py-4 font-mono">
-        CONTINUE WATCHING
-      </h2>
-      <Suspense fallback={<Spinner color="success" size="lg" />}>
-        {isLoading ? (
-          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-            {Array.from({ length: 10 }, (_, index) => (
-              <Card isPressable className="border-none bg-none" key={index}>
-                <CardBody className="overflow-visible py-2">
-                  <Skeleton className="rounded-md">
-                    <Image
-                      alt="Anime Banner"
-                      className="object-cover rounded-xl h-[230px] w-[270px]"
-                      src={
-                        "https://gogocdn.net/cover/kusuriya-no-hitorigoto-1696009733.png"
-                      }
-                      height={230}
-                      width={270}
-                    />
-                  </Skeleton>
-                </CardBody>
-                <CardFooter className="pt-0">
-                  <Skeleton className="rounded-md">
-                    <p className="text-tiny text-center">
-                      Anime Name here prob
-                    </p>
-                  </Skeleton>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        ) : (
-          <div>
-            {localItems.AnimeHistory != null && (
-              <AnimeHistoryItem
-                animeHistory={localItems.AnimeHistory}
-              />
-            )}
-            {localItems.AnimeHistory == null && (
-              <div className="flex flex-col text-center items-center justify-center ">
-                <div className="text-gray-500 ">
-                  Keep watching more and easily continue watching from here..!!
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-      </Suspense>
-      <Suspense fallback={<Spinner color="success" size="lg" />}>
-        <h2 className="text-4xl font-bold mb-4 py-4 font-mono">TOP AIRING</h2>
-        {isLoading ? (
-          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-            {Array.from({ length: 10 }, (_, index) => (
-              <Card isPressable className="border-none bg-none" key={index}>
-                <CardBody className="overflow-visible py-2">
-                  <Skeleton className="rounded-md">
-                    <Image
-                      alt="Anime Banner"
-                      className="object-cover rounded-xl h-[230px] w-[270px]"
-                      src={
-                        "https://gogocdn.net/cover/kusuriya-no-hitorigoto-1696009733.png"
-                      }
-                      height={230}
-                      width={270}
-                    />
-                  </Skeleton>
-                </CardBody>
-                <CardFooter className="pt-0">
-                  <Skeleton className="rounded-md">
-                    <p className="text-tiny text-center">
-                      Anime Name here prob
-                    </p>
-                  </Skeleton>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        ) : (
-          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-            {topAiring.map((anime: any) => (
-              <AnimeCard key={anime.id} anime={anime} />
-            ))}
-          </div>
-        )}
-      </Suspense>
-      <Suspense fallback={<Spinner color="success" size="lg" />}>
-        <h2 className="text-4xl font-bold mb-4 py-4 font-mono">POPULAR</h2>
-        {isLoading ? (
-          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-            {Array.from({ length: 20 }, (_, index) => (
-              <Card isPressable className="border-none bg-none" key={index}>
-                <CardBody className="overflow-visible py-2">
-                  <Skeleton className="rounded-md">
-                    <Image
-                      alt="Anime Banner"
-                      className="object-cover rounded-xl h-[230px]"
-                      src={
-                        "https://gogocdn.net/cover/kusuriya-no-hitorigoto-1696009733.png"
-                      }
-                      height={230}
-                      width={270}
-                    />
-                  </Skeleton>
-                </CardBody>
-                <CardFooter className="pt-0">
-                  <Skeleton className="rounded-md">
-                    <p className="text-tiny text-center">
-                      Anime Name here prob
-                    </p>
-                  </Skeleton>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        ) : (
-          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-            {popular.map((anime: any) => (
-              <AnimeCard key={anime.id} anime={anime} />
-            ))}
-          </div>
-        )}
-      </Suspense>
-      <Suspense fallback={<Spinner color="success" size="lg" />}>
-        <h2 className="text-4xl font-bold mb-4 py-4 font-mono">
-          RECENT EPISODES
-        </h2>
-        {isLoading ? (
-          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-            {Array.from({ length: 20 }, (_, index) => (
-              <Card isPressable className="border-none bg-none" key={index}>
-                <CardBody className="overflow-visible py-2">
-                  <Skeleton className="rounded-md">
-                    <Image
-                      alt="Anime Banner"
-                      className="object-cover rounded-xl h-[230px]"
-                      src={
-                        "https://gogocdn.net/cover/kusuriya-no-hitorigoto-1696009733.png"
-                      }
-                      height={230}
-                      width={270}
-                    />
-                  </Skeleton>
-                </CardBody>
-                <CardFooter className="pt-0">
-                  <Skeleton className="rounded-md">
-                    <p className="text-tiny text-center">
-                      Anime Name here prob
-                    </p>
-                  </Skeleton>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
-        ) : (
-          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 sm:grid-cols-5 md:grid-cols-5 pb-4">
-            {recentEpisodes.map((anime: any) => (
-              <RecentEpisodeCard key={anime.id} anime={anime} />
-            ))}
-          </div>
-        )}
-      </Suspense>
-    </div>
-  );
+ return (
+   <section className=" items-center">
+     <div className="max-w-7xl text-center max-w mx-auto px-6 pb-3">
+       <h2 className="text-4xl font-bold mb-4 py-4 font-mono">
+         CONTINUE WATCHING
+       </h2>
+       <Suspense fallback={<Spinner color="success" size="lg" />}>
+         {isLoading ? (
+           <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
+             {Array.from({ length: 7 }, (_, index) => (
+               <Card
+                 isPressable
+                 className="border-none bg-none flex flex-col justify-center items-center"
+                 key={index}
+               >
+                 <CardBody className="overflow-visible py-2">
+                   <Skeleton className="rounded-md">
+                     <Image
+                       alt="Anime Banner"
+                       className="object-cover rounded-xl h-[230px] w-[270px]"
+                       src={
+                         "https://gogocdn.net/cover/kusuriya-no-hitorigoto-1696009733.png"
+                       }
+                       height={230}
+                       width={270}
+                     />
+                   </Skeleton>
+                 </CardBody>
+                 <CardFooter className="pt-0">
+                   <Skeleton className="rounded-md text-center w-max w-full" />
+                 </CardFooter>
+               </Card>
+             ))}
+           </div>
+         ) : (
+           <div>
+             {localItems.AnimeHistory != null && (
+               <AnimeHistoryItem animeHistory={localItems.AnimeHistory} />
+             )}
+             {localItems.AnimeHistory == null && (
+               <div className="flex flex-col justify-center items-center">
+                 <div className="text-gray-500">
+                   Keep watching more and easily continue watching from here..!!
+                 </div>
+               </div>
+             )}
+           </div>
+         )}
+       </Suspense>
+       <Suspense fallback={<Spinner color="success" size="lg" />}>
+         <h2 className="text-4xl font-bold mb-4 py-4 font-mono">TOP AIRING</h2>
+         {isLoading ? (
+           <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
+             {Array.from({ length: 14 }, (_, index) => (
+               <Card
+                 isPressable
+                 className="border-none bg-none flex flex-col justify-center items-center"
+                 key={index}
+               >
+                 <CardBody className="overflow-visible py-2">
+                   <Skeleton className="rounded-md">
+                     <Image
+                       alt="Anime Banner"
+                       className="object-cover rounded-xl h-[230px] w-[270px]"
+                       src={
+                         "https://gogocdn.net/cover/kusuriya-no-hitorigoto-1696009733.png"
+                       }
+                       height={230}
+                       width={270}
+                     />
+                   </Skeleton>
+                 </CardBody>
+                 <CardFooter className="pt-0">
+                   <Skeleton className="rounded-md text-center w-max w-full" />
+                 </CardFooter>
+               </Card>
+             ))}
+           </div>
+         ) : (
+           <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
+             {topAiring.map((anime: any) => (
+               <AnimeCard key={anime.id} anime={anime} />
+             ))}
+           </div>
+         )}
+       </Suspense>
+       <Suspense fallback={<Spinner color="success" size="lg" />}>
+         <h2 className="text-4xl font-bold mb-4 py-4 font-mono">POPULAR</h2>
+         {isLoading ? (
+           <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
+             {Array.from({ length: 21 }, (_, index) => (
+               <Card isPressable className="border-none bg-none" key={index}>
+                 <CardBody className="overflow-visible py-2">
+                   <Skeleton className="rounded-md">
+                     <Image
+                       alt="Anime Banner"
+                       className="object-cover rounded-xl h-[230px]"
+                       src={
+                         "https://gogocdn.net/cover/kusuriya-no-hitorigoto-1696009733.png"
+                       }
+                       height={230}
+                       width={270}
+                     />
+                   </Skeleton>
+                 </CardBody>
+                 <CardFooter className="pt-0">
+                   <Skeleton className="rounded-md text-center w-max w-full" />
+                 </CardFooter>
+               </Card>
+             ))}
+           </div>
+         ) : (
+           <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
+             {popular.map((anime: any) => (
+               <AnimeCard key={anime.id} anime={anime} />
+             ))}
+           </div>
+         )}
+       </Suspense>
+       <Suspense fallback={<Spinner color="success" size="lg" />}>
+         <h2 className="text-4xl font-bold mb-4 py-4 font-mono">
+           RECENT EPISODES
+         </h2>
+         {isLoading ? (
+           <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
+             {Array.from({ length: 21 }, (_, index) => (
+               <Card isPressable className="border-none bg-none" key={index}>
+                 <CardBody className="overflow-visible py-2">
+                   <Skeleton className="rounded-md">
+                     <Image
+                       alt="Anime Banner"
+                       className="object-cover rounded-xl h-[230px]"
+                       src={
+                         "https://gogocdn.net/cover/kusuriya-no-hitorigoto-1696009733.png"
+                       }
+                       height={230}
+                       width={270}
+                     />
+                   </Skeleton>
+                 </CardBody>
+                 <CardFooter className="pt-0">
+                   <Skeleton className="rounded-md text-center w-max w-full" />
+                 </CardFooter>
+               </Card>
+             ))}
+           </div>
+         ) : (
+           <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
+             {recentEpisodes.map((anime: any) => (
+               <RecentEpisodeCard key={anime.id} anime={anime} />
+             ))}
+           </div>
+         )}
+       </Suspense>
+     </div>
+   </section>
+ );
 };
 
 export default Main;

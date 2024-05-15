@@ -35,7 +35,7 @@ const Genre = ({ params }: any) => {
     fetchDetails();
   }, [fetchDetails]);
   return (
-    <div className="text-center max-w mx-auto px-6 pb-3">
+    <div className="text-center max-w-7xl mx-auto px-6 pb-3">
       <Suspense
         fallback={
           <Spinner
@@ -46,8 +46,22 @@ const Genre = ({ params }: any) => {
           />
         }
       >
+        <div className="py-8 px-4 sm:px-6 lg:px-8 pb-6">
+          <div className="flex flex-col text-center items-center justify-center">
+            <div className="flex flex-col flex-wrap ">
+              <Breadcrumbs size="lg">
+                <BreadcrumbItem>
+                  <Link href="/genre">Genre</Link>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                  {text.charAt(0).toUpperCase() + text.slice(1)}
+                </BreadcrumbItem>
+              </Breadcrumbs>
+            </div>
+          </div>
+        </div>
         {isLoading ? (
-          <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16 sm:grid-cols-5 md:grid-cols-5">
+          <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
             {Array.from({ length: 20 }, (_, index) => (
               <Card isPressable className="border-none bg-none" key={index}>
                 <CardBody className="overflow-visible py-2">
@@ -75,20 +89,6 @@ const Genre = ({ params }: any) => {
           </div>
         ) : (
           <div>
-            <div className="py-8 px-4 sm:px-6 lg:px-8 pb-0">
-              <div className="flex flex-col text-center items-center justify-center">
-                <div className="flex flex-col flex-wrap ">
-                  <Breadcrumbs size="lg">
-                    <BreadcrumbItem>
-                      <Link href="/genre">Genre</Link>
-                    </BreadcrumbItem>
-                    <BreadcrumbItem>
-                      {text.charAt(0).toUpperCase() + text.slice(1)}
-                    </BreadcrumbItem>
-                  </Breadcrumbs>
-                </div>
-              </div>
-            </div>
             {genre_results.length === 0 ? (
               <div className="flex flex-col text-center items-center justify-center h-screen">
                 <div className="text-4xl font-bold mb-4">No Results Found</div>
@@ -97,7 +97,7 @@ const Genre = ({ params }: any) => {
                 </div>
               </div>
             ) : (
-              <div className="gap-2 grid grid-cols-2 lg:grid-cols-10 pt-16 sm:grid-cols-5 md:grid-cols-5 ">
+              <div className="mt-2 items-center grid grid-cols-2 sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-7 gap-4">
                 {genre_results.map((anime: any) => (
                   <AnimeCard key={anime.id} anime={anime} />
                 ))}

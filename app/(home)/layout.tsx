@@ -1,7 +1,6 @@
 "use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
 import { NextUIProvider } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
@@ -41,8 +40,9 @@ export default function RootLayout({
         >
           <Navbar toggleTheme={toggleTheme} theme={theme} />
           <NextUIProvider>
-            <main>{children}</main>
-            <Analytics />
+            <div className="relative flex min-h-screen flex-col">
+              <div className="flex-1">{children}</div>
+            </div>
           </NextUIProvider>
           <Footer />
         </div>
