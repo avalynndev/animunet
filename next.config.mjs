@@ -4,6 +4,7 @@ const nextConfig = {
     domains: ['gogocdn.net'], // Add the domain here
   },
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
