@@ -16,7 +16,7 @@
     "@vercel/speed-insights": "^1.0.11",
     "@vidstack/react": "^1.11.21",
     "axios": "^1.7.2",
-    "framer-motion": "^11.2.6",
+    "framer-motion": "^11.2.10",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
