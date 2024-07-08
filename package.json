@@ -21,7 +21,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
-    "react-router-dom": "^6.24.0",
+    "react-router-dom": "^6.24.1",
     "styled-components": "^6.1.11"
   },
   "devDependencies": {
