@@ -81,7 +81,7 @@ Feel free to contribute to this project! Whether you're an experienced developer
  
 #### Special Thanks to those People who have contributed :
 
-<img width="100" src="https://contrib.rocks/image?repo=InfiniteDevs/animunet" />
+<img width="50" src="https://contrib.rocks/image?repo=InfiniteDevs/animunet" />
 
 ## **Progress Tracker**
 - [x] Terms & Services
