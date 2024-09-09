@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^2.1.3",
+    "@headlessui/react": "^2.1.5",
     "@heroicons/react": "^2.1.5",
     "@nextui-org/react": "^2.4.6",
     "@vercel/analytics": "^1.3.1",
