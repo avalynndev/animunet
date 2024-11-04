@@ -14,7 +14,7 @@
     "@nextui-org/react": "^2.4.8",
     "@vercel/analytics": "^1.3.2",
     "@vercel/speed-insights": "^1.0.12",
-    "@vidstack/react": "^1.12.11",
+    "@vidstack/react": "^1.12.12",
     "axios": "^1.7.7",
     "framer-motion": "^11.11.9",
     "next": "15.0.1",
