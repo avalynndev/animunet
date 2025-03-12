@@ -1,3 +1,7 @@
+<h3 align="center">
+    <b>‼️ This website is no longer available due to the shutdown of Gogoanime. ‼️</b>
+</h3>
+
 <h1 align="center">
     <a href="https://animunet.vercel.app">animunet.vercel.app</a>
 </h1>
